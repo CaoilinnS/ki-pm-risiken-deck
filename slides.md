@@ -225,10 +225,8 @@ Sprechleitfaden · 70 s
 -->
 
 ---
-layout: section
----
 
-<div class="slidev-layout section-layout" style="display:flex;align-items:center;padding:4rem 6rem;">
+<div class="section-layout" style="display:flex;align-items:center;padding:4rem 6rem;height:100%;">
   <div class="section-inner stagger" style="max-width:70ch;">
     <div class="section-label">Teil II · Folien 8–14</div>
     <h1 class="section-title" style="font-size:clamp(2.8rem,6vw,4.4rem);font-weight:300;font-style:italic;line-height:1.05;margin:1rem 0;">Der <em style="font-style:normal;color:var(--gold);">Rechtsrahmen</em></h1>
@@ -482,10 +480,8 @@ Sprechleitfaden · 65 s
 -->
 
 ---
-layout: section
----
 
-<div class="slidev-layout section-layout" style="display:flex;align-items:center;padding:4rem 6rem;">
+<div class="section-layout" style="display:flex;align-items:center;padding:4rem 6rem;height:100%;">
   <div class="section-inner stagger" style="max-width:70ch;">
     <div class="section-label">Teil III · Folien 16–19</div>
     <h1 class="section-title" style="font-size:clamp(2.8rem,6vw,4.4rem);font-weight:300;font-style:italic;line-height:1.05;margin:1rem 0;">Die <em style="font-style:normal;color:var(--gold);">Praxis</em></h1>

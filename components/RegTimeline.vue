@@ -1,30 +1,44 @@
 <template>
   <div class="timeline-wrap stagger">
+    <!-- Achse -->
     <div class="timeline-axis">
+      <div class="axis-line" aria-hidden="true"></div>
       <div
         v-for="(ev, i) in regEvents"
-        :key="ev.date"
-        :class="['event', ev.phase, i % 2 === 0 ? 'top' : 'bottom']"
+        :key="'dot-' + ev.date"
+        :class="['axis-event', ev.phase]"
         :style="{ left: positionFor(ev.date) + '%' }"
       >
-        <div class="event-line" aria-hidden="true"></div>
-        <div class="event-dot" :aria-label="ev.label"></div>
-        <div class="event-card panel">
-          <div class="event-date mono">{{ formatDate(ev.date) }}</div>
-          <div class="event-label">{{ ev.label }}</div>
-          <div class="event-detail">{{ ev.detail }}</div>
-          <div class="event-source mono">{{ ev.source }}</div>
-        </div>
+        <div class="axis-dot" :aria-label="ev.label"></div>
+        <div class="axis-num mono">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="axis-date mono">{{ formatShort(ev.date) }}</div>
       </div>
-      <div class="axis-line" aria-hidden="true"></div>
       <div class="today-marker" :style="{ left: positionFor(today) + '%' }">
-        <span class="today-label mono">Heute · {{ formatDate(today) }}</span>
+        <span class="today-label mono">Heute</span>
+      </div>
+    </div>
+
+    <!-- Event-Karten in fester 7-Spalten-Reihe -->
+    <div class="cards-row">
+      <div
+        v-for="(ev, i) in regEvents"
+        :key="'card-' + ev.date"
+        :class="['event-card', ev.phase]"
+      >
+        <div class="card-head">
+          <span class="card-num mono">{{ (i + 1).toString().padStart(2, '0') }}</span>
+          <span class="card-date mono">{{ formatShort(ev.date) }}</span>
+        </div>
+        <div class="card-label">{{ ev.label }}</div>
+        <div class="card-detail">{{ ev.detail }}</div>
+        <div class="card-source mono">{{ ev.source }}</div>
       </div>
     </div>
 
     <div class="legend mono">
       <span class="legend-item"><span class="dot live"></span> In Kraft</span>
       <span class="legend-item"><span class="dot pending"></span> Zukünftig</span>
+      <span class="legend-item"><span class="bar today"></span> Heute · {{ formatShort(today) }}</span>
     </div>
   </div>
 </template>
@@ -39,13 +53,13 @@ const span = endDate - startDate
 
 function positionFor(dateStr) {
   const d = new Date(dateStr)
-  return ((d - startDate) / span) * 100
+  return Math.max(0, Math.min(100, ((d - startDate) / span) * 100))
 }
 
-function formatDate(dateStr) {
-  const [y, m, d] = dateStr.split('-')
+function formatShort(dateStr) {
+  const [y, m] = dateStr.split('-')
   const months = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']
-  return `${parseInt(d)}. ${months[parseInt(m) - 1]} ${y}`
+  return `${months[parseInt(m) - 1]} ${y}`
 }
 </script>
 
@@ -53,14 +67,14 @@ function formatDate(dateStr) {
 .timeline-wrap {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 2rem 1rem;
+  gap: 1.1rem;
+  padding: 0.8rem 0.5rem 0;
 }
 
 .timeline-axis {
   position: relative;
-  height: 340px;
-  margin: 0 2rem;
+  height: 78px;
+  margin: 0 1.4rem;
 }
 
 .axis-line {
@@ -72,91 +86,44 @@ function formatDate(dateStr) {
   background: var(--gold-muted);
 }
 
-.event {
+.axis-event {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 180px;
+  gap: 0.2rem;
+  width: 60px;
 }
 
-.event-dot {
-  width: 14px;
-  height: 14px;
+.axis-dot {
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
-  border: 2px solid var(--gold);
+  border: 1.5px solid var(--gold);
   background: var(--ink-navy);
   z-index: 2;
-  position: relative;
-  transition: transform 0.2s;
 }
-
-.event.live .event-dot {
+.axis-event.live .axis-dot {
   background: var(--gold);
 }
 
-.event-line {
+.axis-num {
   position: absolute;
-  width: 1px;
-  background: var(--gold-muted);
-  left: 50%;
-}
-
-.event.top {
-  flex-direction: column-reverse;
-  transform: translate(-50%, calc(-50% - 90px));
-}
-.event.top .event-line {
-  bottom: -90px;
-  height: 82px;
-}
-
-.event.bottom {
-  transform: translate(-50%, calc(-50% + 90px));
-}
-.event.bottom .event-line {
-  top: -90px;
-  height: 82px;
-}
-
-.event-card {
-  width: 180px;
-  padding: 0.5rem 0.6rem;
-  font-size: 0.65rem;
-}
-
-.event-date {
-  color: var(--gold);
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-}
-
-.event-label {
-  font-family: var(--font-display);
-  font-weight: 400;
-  color: var(--cream);
-  font-size: 0.78rem;
-  line-height: 1.2;
-  margin: 0.2rem 0 0.3rem;
-}
-
-.event-detail {
-  color: var(--cream-70);
-  font-size: 0.62rem;
-  line-height: 1.35;
-}
-
-.event-source {
-  margin-top: 0.3rem;
+  bottom: calc(50% + 10px);
   font-size: 0.55rem;
-  color: var(--cream-50);
+  color: var(--gold);
+  letter-spacing: 0.15em;
 }
 
-.event.pending .event-card {
-  opacity: 0.85;
-  border-style: dashed;
+.axis-date {
+  position: absolute;
+  top: calc(50% + 10px);
+  font-size: 0.55rem;
+  color: var(--cream-70);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
 }
 
 .today-marker {
@@ -165,27 +132,83 @@ function formatDate(dateStr) {
   bottom: 0;
   width: 1px;
   background: var(--rust);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .today-label {
   position: absolute;
-  top: -1.8rem;
+  top: -1.1rem;
   left: 50%;
   transform: translateX(-50%);
   color: var(--rust);
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   letter-spacing: 0.15em;
   white-space: nowrap;
 }
 
+.cards-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.45rem;
+}
+
+.event-card {
+  background: rgba(11, 30, 59, 0.6);
+  border: 1px solid var(--gold-muted);
+  padding: 0.45rem 0.55rem;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  min-height: 0;
+}
+
+.event-card.pending {
+  border-style: dashed;
+  opacity: 0.9;
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.55rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+}
+
+.card-num { opacity: 0.7; }
+.card-date { color: var(--gold); }
+
+.card-label {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--cream);
+  font-size: 0.72rem;
+  line-height: 1.15;
+}
+
+.card-detail {
+  color: var(--cream-70);
+  font-size: 0.56rem;
+  line-height: 1.32;
+  flex: 1;
+}
+
+.card-source {
+  font-size: 0.5rem;
+  color: var(--cream-50);
+  letter-spacing: 0.04em;
+  margin-top: auto;
+}
+
 .legend {
   display: flex;
-  gap: 1.4rem;
-  font-size: 0.65rem;
+  gap: 1.2rem;
+  font-size: 0.58rem;
   color: var(--cream-70);
-  margin-top: 0.3rem;
-  padding-left: 1rem;
+  padding-left: 0.4rem;
+  letter-spacing: 0.1em;
 }
 
 .legend-item {
@@ -195,15 +218,18 @@ function formatDate(dateStr) {
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
-  border: 2px solid var(--gold);
+  border: 1.5px solid var(--gold);
 }
-.dot.live {
-  background: var(--gold);
-}
-.dot.pending {
-  background: var(--ink-navy);
+.dot.live { background: var(--gold); }
+.dot.pending { background: var(--ink-navy); }
+
+.bar.today {
+  width: 2px;
+  height: 10px;
+  background: var(--rust);
+  display: inline-block;
 }
 </style>
