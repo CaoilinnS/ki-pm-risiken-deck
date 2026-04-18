@@ -1,6 +1,6 @@
 ---
 theme: default
-title: "KI im Projektmanagement: Regulatorische und Haftungsrisiken"
+title: "Generative KI in der Projektdokumentation"
 highlighter: shiki
 drawings:
   persist: false
@@ -15,10 +15,11 @@ defaults:
   layout: default
 ---
 
-<div class="slidev-layout title-layout" style="display:flex;align-items:center;justify-content:flex-start;padding:6rem 6rem 4rem;position:relative;">
+<div class="slidev-layout title-layout" style="display:flex;align-items:center;justify-content:flex-start;padding:5rem 6rem 3rem;position:relative;">
   <div style="max-width:80ch;">
     <div class="kicker">LL.M. Legal Tech · Modul Projektmanagement</div>
-    <h1 style="font-size:clamp(2.4rem,5.5vw,4rem);font-weight:300;line-height:1.08;margin:1rem 0 0.6rem;">Regulatorische und Haftungsrisiken beim Einsatz von <em style="font-style:italic;color:var(--gold);">KI</em> im Projektmanagement</h1>
+    <h1 style="font-size:clamp(2.2rem,4.8vw,3.6rem);font-weight:300;line-height:1.08;margin:1rem 0 0.4rem;">Generative KI in der <em style="font-style:italic;color:var(--gold);">Projektdokumentation</em></h1>
+    <div style="font-family:var(--font-display);font-size:1.2rem;font-style:italic;font-weight:300;color:var(--cream-70);margin-bottom:0.8rem;">Qualitätsanforderungen · Haftungsfragen · Governance-Rahmen</div>
     <hr class="hairline" />
     <div style="font-family:var(--font-body);font-size:1rem;color:var(--cream-70);letter-spacing:0.02em;">Claudia Bothe · Tobias Huck</div>
   </div>
@@ -26,402 +27,500 @@ defaults:
 
 <!--
 Sprechleitfaden · 30 s
-- Begrüßung, Thema und Gruppenvorstellung
-- Leitfrage: Wer haftet, wenn KI im Projekt irrt?
-- Drei-Block-Struktur ankündigen (Evidenz – Recht – Praxis)
-- Unser Anspruch: jede Aussage belegt, keine Erfindung
+- Begrüßung, Thema, Gruppenvorstellung
+- Leitfrage: Wann darf eine KI-erstellte Projektdokumentation als rechtssicher gelten?
+- 5 Blöcke · 18-20 Min · Fokus reguliert (FinServ)
+- Anspruch: jede Aussage belegt
 -->
 
 ---
 
 # Agenda
 
-<div class="editorial stagger" style="max-width:70ch;margin-top:2rem;">
+<div class="editorial stagger" style="max-width:75ch;margin-top:1.4rem;">
 
-<div class="kicker">Drei Blöcke · 20 Folien · 18–20 Min</div>
+<div class="kicker">Fünf Blöcke · 20 Folien · 18–20 Min</div>
 
-<div style="display:grid;grid-template-columns:auto 1fr;gap:1rem 1.5rem;margin-top:1.5rem;font-size:1.05rem;">
+<div style="display:grid;grid-template-columns:auto 1fr;gap:0.8rem 1.5rem;margin-top:1.2rem;font-size:1rem;">
 
 <div class="mono" style="color:var(--gold);">I.</div>
-<div><strong style="color:var(--cream);">Evidenz</strong> — Halluzinationen, PM-Risikoflächen, quantitative Lage (Folien 3–6)</div>
+<div><strong style="color:var(--cream);">Kontext &amp; Nutzungsstand</strong> — Empirie + Jagged Frontier (Folien 3–4)</div>
 
 <div class="mono" style="color:var(--gold);">II.</div>
-<div><strong style="color:var(--cream);">Rechtsrahmen</strong> — AI Act, ProdHaftRL, § 823 BGB, Haftungsmatrix (Folien 7–14)</div>
+<div><strong style="color:var(--cream);">Qualitätsanforderungen</strong> — Fünf Dimensionen für KI-Doku (Folien 6–8)</div>
 
 <div class="mono" style="color:var(--gold);">III.</div>
-<div><strong style="color:var(--cream);">Praxis</strong> — NIST RMF, vier PM-Praktiken, fünf Empfehlungen (Folien 15–19)</div>
+<div><strong style="color:var(--cream);">Haftungsfragen</strong> — § 633 BGB · § 823 BGB · § 416 ZPO · AI Act · DSGVO (Folien 10–14)</div>
+
+<div class="mono" style="color:var(--gold);">IV.</div>
+<div><strong style="color:var(--cream);">Governance-Rahmen</strong> — Drei Ebenen · DORA × MaRisk · BaFin · Bitkom (Folien 16–19)</div>
+
+<div class="mono" style="color:var(--gold);">V.</div>
+<div><strong style="color:var(--cream);">Fazit &amp; Ausblick</strong> — These + PM2030 (Folie 20)</div>
 
 </div>
 
 <hr class="hairline" />
 
-<p style="font-family:var(--font-display);font-style:italic;font-weight:300;color:var(--cream-70);">These: Mit dem neuen EU-Rechtsrahmen wird Haftung zwischen Herstellern, Betreibern, Anwendern und Projektleitungen neu verteilt — KI-Governance wird Chefsache im Projekt.</p>
+<p style="font-family:var(--font-display);font-style:italic;font-weight:300;color:var(--cream-70);font-size:0.95rem;line-height:1.45;">These: Generative KI verbessert die Projektdokumentation nur dann nachweis- und revisionsfähig, wenn ein rechtssicherer Governance-Rahmen besteht — andernfalls überwiegen die regulatorischen Haftungsrisiken.</p>
 
 </div>
 
 <!--
 Sprechleitfaden · 30 s
-- Agenda kurz durchgehen, Schwerpunkt Block II ankündigen (deshalb auch die längste Dauer)
-- Interaktive Haftungsmatrix auf Folie 13 als Höhepunkt hervorheben
-- These stehen lassen, nicht auflösen — die Folien beantworten sie
+- Fünf-Block-Struktur, Schwerpunkt III (Haftung) und IV (Governance)
+- These bewusst geschärft auf "nachweis- und revisionsfähig" — bindet § 416 ZPO + DORA-Doku-Pflichten
+- Folie 14 (Haftungsmatrix) interaktiv
 -->
 
 ---
 
-# KI im Projektmanagement — <em style="font-style:italic;color:var(--gold);">zwei Realitäten</em>
+# Projektdokumentation — wo <em style="font-style:italic;color:var(--gold);">GenKI</em> bereits ankommt
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.5rem;" class="stagger">
+<div style="display:grid;grid-template-columns:1.1fr 1fr;gap:1.6rem;margin-top:1rem;" class="stagger">
 
-<div class="panel">
-<div class="kicker">Produktivitätsversprechen</div>
-<ul style="font-size:0.95rem;list-style:none;padding:0;">
-<li style="margin:0.8rem 0;">+ Vervierfachung des Produktivitätswachstums in KI-exponierten Branchen (7 % → 27 %) <SourceBadge short="PwC, 2025" full="PwC Deutschland (2025). AI Jobs Barometer. Pressemitteilung, S. 2." /></li>
-<li style="margin:0.8rem 0;">+ 99 % der GenAI-„Trailblazer" melden positiven Einfluss auf Projektarbeit <SourceBadge short="PMI, 2024a" full="Project Management Institute (2024). First Movers' Advantage: GenAI Adoption Report, S. 6." /></li>
-<li style="margin:0.8rem 0;">+ Novizen mit GenAI erreichen Profi-Niveau bei Projektplanung <SourceBadge short="Hettrich et al., 2025" full="Hettrich, B., Krings, N. & Kock, A. (2025). Bridging the Expertise Gap. Creativity and Innovation Management, 34, S. 789." /></li>
+<div>
+<div class="kicker">Typische KI-erzeugte Doku-Artefakte</div>
+<ul style="font-size:0.9rem;list-style:none;padding:0;margin-top:0.5rem;">
+<li style="margin:0.4rem 0;padding-left:1rem;border-left:2px solid var(--gold-muted);"><strong>Statusbericht</strong> — Zusammenfassung von Reports, KPI-Daten, Tickets</li>
+<li style="margin:0.4rem 0;padding-left:1rem;border-left:2px solid var(--gold-muted);"><strong>Risikoregister</strong> — Identifikation, Bewertung, Mitigationspfade</li>
+<li style="margin:0.4rem 0;padding-left:1rem;border-left:2px solid var(--gold-muted);"><strong>Change-Request-Begründung</strong> — Impact-Analyse, Abhängigkeiten</li>
+<li style="margin:0.4rem 0;padding-left:1rem;border-left:2px solid var(--gold-muted);"><strong>Lastenheft / Pflichtenheft</strong> — Anforderungen aus Stakeholder-Input</li>
+<li style="margin:0.4rem 0;padding-left:1rem;border-left:2px solid var(--gold-muted);"><strong>Lessons Learned</strong> — Synthese aus Projektabschluss-Daten</li>
 </ul>
 </div>
 
-<div class="panel" style="border-color:var(--rust);">
-<div class="kicker" style="color:var(--rust);">Risikorealität</div>
-<ul style="font-size:0.95rem;list-style:none;padding:0;">
-<li style="margin:0.8rem 0;">− 74 % der PM-Fachkräfte haben <strong>gemischte oder negative Gefühle</strong> <SourceBadge short="Aramali et al., 2025" full="Aramali, V. et al. (2025). Generative AI in project management. Project Leadership and Society, 6, 100191, S. 1." /></li>
-<li style="margin:0.8rem 0;">− „Unfaithful appropriation" — Nutzung gegen Tool-Design mit unbeabsichtigten Ergebnissen <SourceBadge short="Felicetti et al., 2024" full="Felicetti, A. M. et al. (2024). Artificial intelligence and project management. Journal of Innovation & Knowledge, 9, 100545." /></li>
-<li style="margin:0.8rem 0;">− Warnung vor Over-Reliance und algorithmischem Bias <SourceBadge short="Hughes et al., 2025" full="Hughes, L. et al. (2025). Impact of AI on project management. Journal of Innovation & Knowledge, 10, 100772, S. 8." /></li>
+<div class="panel">
+<div class="kicker">Empirische Penetration</div>
+<ul style="font-size:0.85rem;list-style:none;padding:0;">
+<li style="margin:0.5rem 0;">+27 % Produktivitätswachstum in KI-exponierten Branchen <SourceBadge short="PwC, 2025" full="PwC Deutschland (2025). AI Jobs Barometer 2025, Pressemitteilung S. 2." /></li>
+<li style="margin:0.5rem 0;">99 % der GenKI-„Trailblazer" melden positiven Einfluss auf Projektarbeit <SourceBadge short="PMI, 2024" full="Project Management Institute (2024). First Movers' Advantage: GenAI Adoption Report, S. 6." /></li>
+<li style="margin:0.5rem 0;">86 % nutzen GenKI bereits für Projektplanung <SourceBadge short="Aramali et al., 2025" full="Aramali, V. et al. (2025). Generative AI in project management. Project Leadership and Society, 6, 100191." /></li>
+<li style="margin:0.5rem 0;color:var(--cream);">Aber: <strong>74 % gemischte oder negative Gefühle</strong> trotz Adoption <SourceBadge short="Aramali et al., 2025" full="Aramali, V. et al. (2025). Generative AI in project management. Project Leadership and Society, 6, 100191, Abstract S. 1." /></li>
 </ul>
 </div>
 
 </div>
 
-<p class="pull-quote" style="margin-top:1.5rem;font-size:1.1rem;">Produktivität und Risiko wachsen parallel — die juristische Seite hinkt nach.</p>
+<p class="pull-quote" style="margin-top:1rem;font-size:1.05rem;">Die Adoption läuft. Die rechtliche Einordnung läuft hinterher.</p>
 
 <!--
 Sprechleitfaden · 60 s
-- Linke Spalte: belegte Produktivitätsgewinne knapp nennen, nicht einzeln vorlesen
-- Rechte Spalte: 74% ist Kernzahl — auch enthusiastische User haben Bedenken
-- Übergang: „Woher kommen diese Bedenken konkret?" → Folie 4
+- Fünf typische Doku-Artefakte — alle 5 vom Werkvertrag erfasst (Vorgriff auf Folie 10)
+- Penetrationszahlen als Kontext — 86 % nutzen GenKI für Planung
+- 74-%-Diskrepanz öffnet das Spannungsfeld → Folie 4
 -->
 
 ---
 
-# Drei Zahlen, die das Deck tragen
+# Die <em style="font-style:italic;color:var(--gold);">Jagged Technological Frontier</em>
 
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:2rem;" class="stagger">
+<div style="display:grid;grid-template-columns:1.4fr 1fr;gap:1.4rem;margin-top:1rem;" class="stagger">
 
-<div class="panel panel-gold" style="text-align:center;padding:2rem 1.2rem;">
-<div style="font-family:var(--font-display);font-size:3.6rem;font-weight:300;color:var(--gold);line-height:1;">17–33 %</div>
-<div class="mono" style="font-size:0.6rem;letter-spacing:0.2em;color:var(--cream-50);margin-top:0.4rem;">HALLUZINATIONSRATE</div>
-<p style="font-size:0.82rem;margin-top:0.8rem;">Auch spezialisierte Rechts-RAG-Tools (Lexis+ AI, Westlaw, Practical Law) halluzinieren — trotz „hallucination-free"-Versprechen.</p>
-<div class="mono" style="font-size:0.55rem;color:var(--cream-50);margin-top:0.6rem;"><SourceBadge short="Magesh et al., 2025" full="Magesh, V. et al. (2025). Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools. Journal of Empirical Legal Studies. S. 1 (Abstract), S. 9 (Abschnitt 6.1)." /></div>
+<div>
+<p style="font-size:0.95rem;line-height:1.5;color:var(--cream);">Dell'Acqua et al. (2026) zeigen mit einem präregistrierten Feldexperiment an <strong>758 BCG-Consultants</strong>: Die Wirkung von GenKI hängt davon ab, ob die Aufgabe <em>innerhalb</em> oder <em>außerhalb</em> der KI-Fähigkeitsgrenze liegt.</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-top:1rem;">
+
+<div class="panel" style="padding:0.9rem 1rem;">
+<div class="kicker" style="color:var(--gold);">Innerhalb der Frontier</div>
+<div style="font-family:var(--font-display);font-size:1.6rem;font-weight:300;color:var(--gold);line-height:1;margin:0.3rem 0;">+12,2 %</div>
+<p style="font-size:0.75rem;color:var(--cream-70);">mehr Aufgaben, <strong>−25,1 %</strong> Zeit, signifikant höhere Qualität</p>
 </div>
 
-<div class="panel" style="text-align:center;padding:2rem 1.2rem;">
-<div style="font-family:var(--font-display);font-size:3.6rem;font-weight:300;color:var(--gold);line-height:1;">§&nbsp;823</div>
-<div class="mono" style="font-size:0.6rem;letter-spacing:0.2em;color:var(--cream-50);margin-top:0.4rem;">BGB ABS. 1</div>
-<p style="font-size:0.82rem;margin-top:0.8rem;">Wer fahrlässig unverifizierte KI-Ausgaben übernimmt und einem Dritten Schaden zufügt, haftet persönlich. Die Verantwortung bleibt beim Menschen.</p>
-<div class="mono" style="font-size:0.55rem;color:var(--cream-50);margin-top:0.6rem;">Deliktische Grundnorm</div>
-</div>
-
-<div class="panel" style="text-align:center;padding:2rem 1.2rem;">
-<div style="font-family:var(--font-display);font-size:3.6rem;font-weight:300;color:var(--gold);line-height:1;">09.12.<br/>2026</div>
-<div class="mono" style="font-size:0.6rem;letter-spacing:0.2em;color:var(--cream-50);margin-top:0.4rem;">UMSETZUNGSFRIST</div>
-<p style="font-size:0.82rem;margin-top:0.8rem;">Ab diesem Datum erfasst die neue ProdHaftRL Software und KI als Produkt — verschuldensunabhängige Haftung droht.</p>
-<div class="mono" style="font-size:0.55rem;color:var(--cream-50);margin-top:0.6rem;"><SourceBadge short="RL 2024/2853 Art. 22" full="Richtlinie (EU) 2024/2853 des Europäischen Parlaments und des Rates vom 23. Oktober 2024 über die Haftung für fehlerhafte Produkte, Art. 22 Abs. 1." /></div>
+<div class="panel" style="padding:0.9rem 1rem;border-color:var(--rust);">
+<div class="kicker" style="color:var(--rust);">Außerhalb der Frontier</div>
+<div style="font-family:var(--font-display);font-size:1.6rem;font-weight:300;color:var(--rust);line-height:1;margin:0.3rem 0;">−19 %</div>
+<p style="font-size:0.75rem;color:var(--cream-70);">seltener korrekte Lösung — ohne dass Nutzer es merken</p>
 </div>
 
 </div>
 
-<!--
-Sprechleitfaden · 60 s
-- Ankerzahl 1: 17–33% sind die Stanford-RegLab-Zahlen (Magesh 2025), NICHT die 58% (die stammen aus Dahl 2024 für LLMs ohne RAG — wichtige Korrektur ggü. populärem Kurzzitat)
-- Zahl 2: § 823 BGB als juristischer Anker — der Mensch bleibt verantwortlich
-- Zahl 3: 9.12.2026 — alles was danach in Verkehr gebracht wird, fällt unter neue ProdHaftRL
-- Übergang zur Taxonomie: „Aber was heißt Halluzination eigentlich präzise?"
--->
-
----
-
-# Halluzinationen — eine <em style="font-style:italic;color:var(--gold);">Taxonomie</em>
-
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;margin-top:0.6rem;" class="stagger">
-
-<div class="panel" style="padding:0.8rem 1rem;">
-<div class="kicker">① Intrinsisch (faithfulness)</div>
-<p style="font-size:0.78rem;margin:0.3rem 0;">Output <strong>widerspricht dem Input</strong>. Typisch bei Summarization.</p>
-<p class="mono" style="font-size:0.65rem;color:var(--cream-50);margin:0.2rem 0 0;">Input: „Einstein wurde in Ulm geboren." → Output: „in Berlin geboren." <SourceBadge short="Anh-Hoang et al., 2025" full="Anh-Hoang, D., Tran, V. & Nguyen, L.-M. (2025). Survey and analysis of hallucinations in large language models. Frontiers in AI, 8:1622292, S. 3." /></p>
+<p style="font-size:0.82rem;color:var(--cream-70);margin-top:0.8rem;font-style:italic;">„Falling asleep at the wheel" — überhöhtes Vertrauen, verstärkt durch die persuasive Wirkung generativer KI. <SourceBadge short="Dell'Acqua et al., 2026, S. 1, 18" full="Dell'Acqua, F. et al. (2026). Navigating the Jagged Technological Frontier. Organization Science (Articles in Advance), DOI 10.1287/orsc.2025.21838." /></p>
 </div>
 
-<div class="panel" style="padding:0.8rem 1rem;">
-<div class="kicker">② Extrinsisch (unverankerte Ergänzung)</div>
-<p style="font-size:0.78rem;margin:0.3rem 0;">Output fügt <strong>Information hinzu</strong>, die nicht im Kontext steht — nicht unmittelbar falsch, aber ohne Quellverankerung.</p>
-<p class="mono" style="font-size:0.65rem;color:var(--cream-50);margin:0.2rem 0 0;">Erfundener Kausalmechanismus in offener QA. <SourceBadge short="Anh-Hoang et al., 2025" full="Anh-Hoang et al. (2025), S. 3, Zeilen 148-151." /></p>
-</div>
-
-<div class="panel" style="padding:0.8rem 1rem;">
-<div class="kicker">③ Faktisch (factualness)</div>
-<p style="font-size:0.78rem;margin:0.3rem 0;">Output widerspricht <strong>real-weltlichem Wissen</strong>, unabhängig vom Kontext.</p>
-<p class="mono" style="font-size:0.65rem;color:var(--cream-50);margin:0.2rem 0 0;">„Hauptstadt Kanadas: Toronto." <SourceBadge short="Li et al., 2024" full="Li, Y., Sheng, D., Zhou, Z. & Wu, Y. (2024). AI hallucination: towards a comprehensive classification of distorted information in AIGC. Humanities and Social Sciences Communications, 11:1278, S. 2." /></p>
-</div>
-
-<div class="panel" style="padding:0.8rem 1rem;">
-<div class="kicker">④ Logisch / misgrounded</div>
-<p style="font-size:0.78rem;margin:0.3rem 0;">Syntax korrekt, <strong>Schlussfolgerung widersprüchlich</strong> — oder Zitation existiert, stützt die Aussage aber nicht.</p>
-<p class="mono" style="font-size:0.65rem;color:var(--cream-50);margin:0.2rem 0 0;">Die gefährlichste Klasse in juristischen Kontexten. <SourceBadge short="Magesh et al., 2025" full="Magesh et al. (2025). Abschnitt 4.3, S. 5–6." /></p>
-</div>
-
-</div>
-
-<p style="margin-top:0.6rem;font-size:0.78rem;color:var(--cream-70);font-family:var(--font-display);font-style:italic;line-height:1.35;">
-Shao (2025) verdichtet die Typen auf zwei Kernfehler: <strong>faithfulness errors</strong> (Widerspruch zu Input) und <strong>factualness errors</strong> (Widerspruch zu Weltwissen). <SourceBadge short="Shao, 2025" full="Shao, A. (2025). Beyond Misinformation: A Conceptual Framework for Studying AI Hallucinations in (Science) Communication. arXiv:2504.13777v1, S. 5–6." />
-</p>
-
-<!--
-Sprechleitfaden · 60 s
-- Vier Kategorien: intrinsisch/extrinsisch/faktisch/logisch — Zuhörer müssen die Unterscheidung nicht auswendig können
-- Kernbotschaft: NICHT jede Halluzination ist erfundene Quelle. Besonders gefährlich: misgrounded (4) — die Zitation existiert, stützt aber die Aussage nicht
-- Shao-Kondensat als Brücke zur nächsten Folie (PM-Artefakte)
--->
-
----
-
-# Wo Halluzinationen auf <em style="font-style:italic;color:var(--gold);">PM-Artefakte</em> treffen
-
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;" class="stagger">
-
-<div class="panel">
-<div class="kicker">Risikoregister</div>
-<p style="font-size:0.82rem;"><strong>Modus:</strong> erfundene Risiken oder falsch zitierte Standards (extrinsisch + misgrounded).</p>
-<p style="font-size:0.82rem;color:var(--cream);"><strong>Konsequenz:</strong> Fehlpriorisierung; echte Risiken bleiben unbeachtet.</p>
-<p class="mono" style="font-size:0.65rem;color:var(--cream-50);">Eigenschluss gestützt auf <SourceBadge short="Hughes et al., 2025" full="Hughes et al. (2025), S. 8: Warnung vor algorithmischer Verzerrung bei risk pattern recognition." /> · <SourceBadge short="Aramali et al., 2025" full="Aramali et al. (2025), S. 2: Qualität hängt von Datenlage und Nutzeranweisungen ab; Bedenken bei Root-Cause-Analyse." /></p>
-</div>
-
-<div class="panel">
-<div class="kicker">Statusbericht</div>
-<p style="font-size:0.82rem;"><strong>Modus:</strong> intrinsische Zahlen-/Meilenstein­verdrehung beim Zusammenfassen.</p>
-<p style="font-size:0.82rem;color:var(--cream);"><strong>Konsequenz:</strong> falsche Lenkungsausschuss-Entscheidungen, Vertrauensverlust.</p>
-<p class="mono" style="font-size:0.65rem;color:var(--cream-50);">Summarization-Fehlerklasse <SourceBadge short="Anh-Hoang et al., 2025" full="Anh-Hoang et al. (2025), S. 3: Intrinsische Halluzinationen treten häufig bei Summarization auf." /> · „subtle hallucinations" <SourceBadge short="Shao, 2025" full="Shao (2025), S. 5: Leichte Zahlenabweichungen sind besonders schwer zu entdecken." /></p>
-</div>
-
-<div class="panel">
-<div class="kicker">Change Request</div>
-<p style="font-size:0.82rem;"><strong>Modus:</strong> faktische + misgrounded — nicht existente Abhängigkeiten, unpassende Präzedenz-Dokumente.</p>
-<p style="font-size:0.82rem;color:var(--cream);"><strong>Konsequenz:</strong> Genehmigungen auf falscher Faktenbasis; Budget-/Termin­überschreitung.</p>
-<p class="mono" style="font-size:0.65rem;color:var(--cream-50);"><SourceBadge short="Magesh et al., 2025" full="Magesh et al. (2025), S. 6: Misgrounded errors sind gefährlicher als erfundene, weil schwerer zu entdecken." /> · <SourceBadge short="Felicetti et al., 2024" full="Felicetti et al. (2024): Unfaithful appropriation von GenAI-Tools." /></p>
-</div>
-
-<div class="panel" style="border-color:var(--rust);">
-<div class="kicker" style="color:var(--rust);">Stakeholder-Kommunikation</div>
-<p style="font-size:0.82rem;"><strong>Modus:</strong> plausibel-ausgeschmückte Zusagen (Air-Canada-Muster).</p>
-<p style="font-size:0.82rem;color:var(--cream);"><strong>Konsequenz:</strong> konkrete Haftung — <em>Moffatt v. Air Canada</em> (2024): Unternehmen haftet für Chatbot-Falschauskunft.</p>
-<p class="mono" style="font-size:0.65rem;color:var(--cream-50);"><SourceBadge short="Shao, 2025" full="Shao (2025), S. 2: Air Canada chatbot liability precedent." /></p>
+<div class="panel panel-gold">
+<div class="kicker">Implikation für Doku</div>
+<p style="font-size:0.85rem;line-height:1.45;">Die Frontier-Grenze ist <strong>nicht erkennbar</strong>, ohne dass jemand prüft. Genau hier setzen die fünf Qualitätsdimensionen an — und die Pflicht zu menschlicher Aufsicht (Art. 14 AI Act).</p>
+<p style="font-size:0.78rem;color:var(--cream-70);margin-top:0.6rem;">Wenn die KI bei Statusbericht-Zusammenfassung im sweet spot ist, aber bei Risikoanalyse außerhalb — wird der Statusbericht plausibel und das Risikoregister still falsch.</p>
 </div>
 
 </div>
 
 <!--
 Sprechleitfaden · 70 s
-- Transparenz: „In der Fachliteratur sind diese PM-Artefakte nicht direkt durchdekliniert — wir leiten ab." Das steht auch so auf der Folie (Eigenschluss-Hinweis)
-- Pointe Stakeholder-Kommunikation: Moffatt v. Air Canada ist ein reales Urteil — das ist nicht mehr Theorie
-- Überleitung: „Welcher Rechtsrahmen greift nun genau?"
+- Dell'Acqua-Studie als Empirie-Anker für gesamtes Deck
+- Drei Zahlen merken: +12,2 % / -25,1 % / -19 %
+- "Falling asleep at the wheel" als Bild zitieren
+- Brücke: deshalb brauchen wir präzise Qualitätsdimensionen → Block II
 -->
 
 ---
 
 <div class="section-layout" style="display:flex;align-items:center;padding:4rem 6rem;height:100%;">
   <div class="section-inner stagger" style="max-width:70ch;">
-    <div class="section-label">Teil II · Folien 8–14</div>
-    <h1 class="section-title" style="font-size:clamp(2.8rem,6vw,4.4rem);font-weight:300;font-style:italic;line-height:1.05;margin:1rem 0;">Der <em style="font-style:normal;color:var(--gold);">Rechtsrahmen</em></h1>
+    <div class="section-label">Teil II · Folien 6–8</div>
+    <h1 class="section-title" style="font-size:clamp(2.6rem,5.5vw,4rem);font-weight:300;font-style:italic;line-height:1.05;margin:1rem 0;">Was <em style="font-style:normal;color:var(--gold);">Qualität</em> bei KI-Doku heißt</h1>
     <hr class="hairline" />
-    <p style="font-family:var(--font-display);font-size:1.1rem;font-weight:300;font-style:italic;color:var(--cream-70);max-width:55ch;margin-top:0.8rem;">AI Act, Produkthaftungsrichtlinie, § 823 BGB — und die Frage, wie sich Haftung auf vier Rollen im Projekt verteilt.</p>
+    <p style="font-family:var(--font-display);font-size:1.05rem;font-weight:300;font-style:italic;color:var(--cream-70);max-width:55ch;margin-top:0.8rem;">Fünf Dimensionen, abgeleitet aus NIST AI RMF 1.0 — und was sie für die Praxis bedeuten.</p>
   </div>
 </div>
 
 <!--
 Sprechleitfaden · 20 s
-- Kurze Überleitung, keine inhaltlichen Aussagen
-- Dieser Block ist der umfangreichste — inhaltlich die Mitte des Vortrags
+- Block II: Qualitätsanforderungen
+- Fünf Dimensionen sind die LL.M.-Innovation dieses Decks
 -->
 
 ---
 
-# Regulatorischer Zeithorizont <span style="color:var(--gold);">2024 – 2027</span>
+# Fünf Qualitätsdimensionen
 
-<RegTimeline />
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0.6rem;margin-top:1.2rem;" class="stagger">
 
-<div style="margin-top:1rem;font-size:0.82rem;color:var(--cream-70);font-family:var(--font-display);font-style:italic;max-width:78ch;">
-Drei regulatorische Stränge laufen parallel: AI Act in gestaffelter Geltung, neue ProdHaftRL, nationale Umsetzung. Für Projekte, die jetzt starten, endet das Fenster „alte Rechtslage" in weniger als neun Monaten.
+<div class="panel" style="padding:0.7rem 0.7rem;">
+<div class="mono" style="color:var(--gold);font-size:0.55rem;letter-spacing:0.18em;">01</div>
+<h3 style="font-size:0.95rem;margin:0.3rem 0;color:var(--cream);">Faktentreue</h3>
+<p style="font-size:0.72rem;color:var(--cream-70);">Konsistent mit Weltwissen + Projektdaten. Keine fact-conflicting oder misgrounded Aussagen.</p>
 </div>
 
-<!--
-Sprechleitfaden · 75 s
-- Die Timeline visualisiert 7 Events (5 AI-Act-Phasen + 2 ProdHaftRL-Etappen)
-- Roter „Heute"-Marker bei 18.04.2026 — Verbote und GPAI-Regeln schon live, Hochrisiko-Anhang III in 3,5 Monaten
-- ProdHaftRL-Umsetzungsfrist 9.12.2026: Deutschland hat noch nicht umgesetzt (Stand April 2026) — Zeitdruck beim BMJ
-- Quellen: EUR-Lex, Art. 113 AI Act und Art. 22 ProdHaftRL
--->
-
----
-
-# EU AI Act — drei zentrale Artikel für das PM
-
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-top:1.2rem;" class="stagger">
-
-<div class="panel">
-<div class="kicker">Art. 4 — KI-Kompetenz</div>
-<p style="font-size:0.82rem;">Anbieter <strong>und</strong> Betreiber müssen ein „ausreichendes Maß an KI-Kompetenz" ihres Personals sicherstellen. Maßstab: technische Kenntnisse, Ausbildung, Einsatzkontext.</p>
-<p style="font-size:0.8rem;color:var(--cream);margin-top:0.5rem;"><strong>PM:</strong> Schulungs- und Kompetenznachweise dokumentieren — Unterlassen = struktureller Pflichtverstoß.</p>
+<div class="panel" style="padding:0.7rem 0.7rem;">
+<div class="mono" style="color:var(--gold);font-size:0.55rem;letter-spacing:0.18em;">02</div>
+<h3 style="font-size:0.95rem;margin:0.3rem 0;color:var(--cream);">Vollständigkeit</h3>
+<p style="font-size:0.72rem;color:var(--cream-70);">Alle nach Vertrag/Standard erforderlichen Aspekte abgedeckt. Keine compliance-relevanten Lücken.</p>
 </div>
 
-<div class="panel">
-<div class="kicker">Art. 14 — Human Oversight</div>
-<p style="font-size:0.82rem;">Hochrisiko-KI muss während der Nutzung wirksam beaufsichtigt werden können. Aufsichtsperson muss Grenzen verstehen, Ausgaben interpretieren, abbrechen und überstimmen können.</p>
-<p style="font-size:0.8rem;color:var(--cream);margin-top:0.5rem;"><strong>PM:</strong> benannte, qualifizierte Aufsichtsperson mit Abbruchbefugnis pro Use-Case.</p>
+<div class="panel" style="padding:0.7rem 0.7rem;">
+<div class="mono" style="color:var(--gold);font-size:0.55rem;letter-spacing:0.18em;">03</div>
+<h3 style="font-size:0.95rem;margin:0.3rem 0;color:var(--cream);">Nachvollziehbarkeit</h3>
+<p style="font-size:0.72rem;color:var(--cream-70);">Jede Aussage rückführbar auf Prompt, Modellversion, Quellenkette, Retrieval-Kontext.</p>
 </div>
 
-<div class="panel">
-<div class="kicker">Anhang III — Hochrisiko</div>
-<p style="font-size:0.82rem;">Zweckbezogene Einstufung: HR, Bildung, Kreditvergabe, Strafverfolgung, Justiz u. a. <strong>Art. 25</strong>: Betreiber wird zum Anbieter, wenn er den Zweck ändert.</p>
-<p style="font-size:0.8rem;color:var(--cream);margin-top:0.5rem;"><strong>PM:</strong> Use-Case-Klassifizierung <em>zu Projektbeginn</em>.</p>
+<div class="panel panel-gold" style="padding:0.7rem 0.7rem;">
+<div class="mono" style="color:var(--gold);font-size:0.55rem;letter-spacing:0.18em;">04</div>
+<h3 style="font-size:0.95rem;margin:0.3rem 0;color:var(--cream);">Auditierbarkeit</h3>
+<p style="font-size:0.72rem;color:var(--cream-70);">Externe Prüfer rekonstruieren Entstehung + Freigabe ohne Bearbeiter.</p>
+</div>
+
+<div class="panel" style="padding:0.7rem 0.7rem;">
+<div class="mono" style="color:var(--gold);font-size:0.55rem;letter-spacing:0.18em;">05</div>
+<h3 style="font-size:0.95rem;margin:0.3rem 0;color:var(--cream);">Revisionssicherheit</h3>
+<p style="font-size:0.72rem;color:var(--cream-70);">Versionen, Zeitstempel, Signaturen manipulationssicher. Aufbewahrungsfristen erfüllt.</p>
 </div>
 
 </div>
 
-<p class="mono" style="font-size:0.65rem;color:var(--cream-50);margin-top:1rem;">
-Quellen: <SourceBadge short="VO (EU) 2024/1689, Art. 4, 14, 25, Anhang III" full="Verordnung (EU) 2024/1689 des Europäischen Parlaments und des Rates vom 13. Juni 2024, AI Act." /> · <SourceBadge short="Rodriguez de Las Heras Ballell, 2025, S. 9" full="Rodriguez de Las Heras Ballell (2025). Mapping generative AI rules and liability scenarios in the AI Act. Cambridge Forum on AI: Law and Governance, 1, e5. Art. 25 AI Act: Rollenwechsel Betreiber → Anbieter." />
-</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.4rem;">
+
+<div class="panel" style="padding:0.9rem 1rem;">
+<div class="kicker">Belegtheit</div>
+<p style="font-size:0.8rem;line-height:1.4;">Verdichtung der <strong>NIST AI RMF Trustworthiness Characteristics</strong> (Abschn. 3.1–3.7, S. 12–17) auf fünf PM-relevante Dimensionen. Einzelanker zu jeder Dimension belegt; die Verdichtung selbst ist eigene Synthese. <SourceBadge short="NIST AI 100-1, S. 12–17" full="NIST (2023). AI Risk Management Framework 1.0 (NIST AI 100-1), Abschnitt 3.1–3.7, S. 12–17." /></p>
+</div>
+
+<div class="panel" style="padding:0.9rem 1rem;">
+<div class="kicker">AI-Act-Kongruenz</div>
+<p style="font-size:0.8rem;line-height:1.4;">Art. 12 (Aufzeichnung) ↔ Nachvollziehbarkeit · Art. 13 (Transparenz) ↔ Vollständigkeit · Art. 14 (Human Oversight) ↔ Auditierbarkeit · Art. 15 (Genauigkeit) ↔ Faktentreue + Revisionssicherheit. <SourceBadge short="VO (EU) 2024/1689" full="Verordnung (EU) 2024/1689, Artikel 12, 13, 14, 15." /></p>
+</div>
+
+</div>
 
 <!--
 Sprechleitfaden · 70 s
-- Drei Artikel, nicht mehr — für PM die wichtigsten
-- Art. 4 gilt schon (seit 2.2.2025): Kompetenznachweise sind ab sofort Pflicht
-- Art. 14 setzt die Rolle der Projektleitung formal als Human-Oversight-Verantwortliche
-- Art. 25 ist der „Flip-Moment": wenn Beratung ChatGPT-Enterprise für HR-Ranking zweckentfremdet, wird sie zum Anbieter mit vollen Pflichten
+- Fünf Dimensionen ist die Eigenleistung des Decks — verdichtet aus NIST 7
+- Jede Dimension auf 1 Satz reduziert für die Folie
+- Auditierbarkeit goldhighlighted, weil zentral für FinServ
+- AI-Act-Kongruenz zeigt: Framework ist nicht erfunden, sondern in EU-Recht spiegelbar
 -->
 
 ---
 
-# Neue ProdHaftRL — <em style="font-style:italic;color:var(--gold);">Software ist jetzt Produkt</em>
+# Faktentreue — der <em style="font-style:italic;color:var(--gold);">Halluzinations-Stresstest</em>
 
-<div style="display:grid;grid-template-columns:1fr 1.2fr;gap:1.6rem;margin-top:1rem;" class="stagger">
+<div style="display:grid;grid-template-columns:1fr 1.2fr;gap:1.4rem;margin-top:1rem;" class="stagger">
+
+<div class="panel panel-gold" style="text-align:center;padding:1.6rem 1.2rem;">
+<div style="font-family:var(--font-display);font-size:3.2rem;font-weight:300;color:var(--gold);line-height:1;">17–33 %</div>
+<div class="mono" style="font-size:0.55rem;letter-spacing:0.2em;color:var(--cream-50);margin-top:0.4rem;">HALLUZINATIONSRATE</div>
+<p style="font-size:0.78rem;margin-top:0.6rem;color:var(--cream);">Auch spezialisierte Rechts-RAG-Tools — Lexis+ AI, Westlaw, Practical Law.</p>
+<p style="font-size:0.65rem;color:var(--cream-50);margin-top:0.4rem;">Trotz „hallucination-free"-Versprechen.</p>
+<p class="mono" style="font-size:0.55rem;color:var(--cream-50);margin-top:0.6rem;"><SourceBadge short="Magesh et al., 2025" full="Magesh, V. et al. (2025). Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools. Journal of Empirical Legal Studies. Abstract S. 1, Abschnitt 6.1 S. 9." /></p>
+</div>
 
 <div>
-<div class="kicker">Alte Rechtslage (ProdHaftG 1989)</div>
-<ul style="font-size:0.85rem;list-style:none;padding:0;">
-<li style="margin:0.5rem 0;padding-left:1rem;border-left:2px solid var(--gold-muted);">§ 2 ProdHaftG: Produkt = bewegliche Sache + Elektrizität</li>
-<li style="margin:0.5rem 0;padding-left:1rem;border-left:2px solid var(--gold-muted);">Software nicht ausdrücklich erfasst — <strong>umstritten</strong> bei KI</li>
-<li style="margin:0.5rem 0;padding-left:1rem;border-left:2px solid var(--gold-muted);">Nur hardware-eingebettete KI sicher Produkt</li>
-</ul>
+<div class="kicker">Vier Halluzinations-Klassen</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.4rem;">
+
+<div class="panel" style="padding:0.55rem 0.7rem;">
+<div class="mono" style="color:var(--gold);font-size:0.55rem;">① INTRINSISCH</div>
+<p style="font-size:0.7rem;margin:0.2rem 0;">widerspricht dem Input — typisch bei Summarization</p>
+</div>
+
+<div class="panel" style="padding:0.55rem 0.7rem;">
+<div class="mono" style="color:var(--gold);font-size:0.55rem;">② EXTRINSISCH</div>
+<p style="font-size:0.7rem;margin:0.2rem 0;">fügt Information ohne Kontextbezug hinzu</p>
+</div>
+
+<div class="panel" style="padding:0.55rem 0.7rem;">
+<div class="mono" style="color:var(--gold);font-size:0.55rem;">③ FAKTISCH</div>
+<p style="font-size:0.7rem;margin:0.2rem 0;">widerspricht etabliertem Weltwissen</p>
+</div>
+
+<div class="panel" style="padding:0.55rem 0.7rem;border-color:var(--rust);">
+<div class="mono" style="color:var(--rust);font-size:0.55rem;">④ MISGROUNDED</div>
+<p style="font-size:0.7rem;margin:0.2rem 0;">Quelle existiert, stützt die Aussage aber nicht — gefährlichste Klasse</p>
+</div>
+
+</div>
+
+<p style="font-size:0.78rem;color:var(--cream-70);margin-top:0.8rem;font-style:italic;font-family:var(--font-display);line-height:1.4;">Magesh definiert Halluzination strenger als Anbieter: nicht nur erfundene Fälle, sondern auch <strong>misgrounded</strong> — die Quelle existiert, stützt die Aussage aber nicht. Genau das, was im Risikoregister oder Change Request still durchrutscht.</p>
+<p class="mono" style="font-size:0.55rem;color:var(--cream-50);"><SourceBadge short="Anh-Hoang et al., 2025" full="Anh-Hoang, D., Tran, V. & Nguyen, L.-M. (2025). Survey and analysis of hallucinations in large language models. Frontiers in AI, 8:1622292, S. 3." /> · <SourceBadge short="Magesh et al., 2025, S. 5–6" full="Magesh et al. (2025), Abschnitt 4.3 zur Groundedness-Definition." /></p>
+</div>
+
+</div>
+
+<!--
+Sprechleitfaden · 70 s
+- Korrektur populärer Kurzzitat: 17-33 % stimmt für Magesh, NICHT die oft kursierende 58 %
+- Vier Klassen knapp benennen, NICHT auswendig lehren
+- Misgrounded (rost) ist die kritische Klasse für Doku — Zitate wirken belegbar
+- Brücke: deshalb braucht es Auditierbarkeit (Folie 8)
+-->
+
+---
+
+# Auditierbarkeit &amp; Revisionssicherheit
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:1rem;" class="stagger">
+
+<div class="panel">
+<div class="kicker">Auditierbarkeit (Auditability)</div>
+<p style="font-size:0.85rem;line-height:1.4;margin:0.3rem 0;">Externe Prüfer rekonstruieren Entstehung und Freigabe einer KI-Doku ohne den Bearbeiter. Setzt voraus: <strong>Prompts, Outputs, Modellversionen, Reviews</strong> sind zugänglich aufbewahrt.</p>
+
+<hr class="hairline" style="margin:0.6rem 0;" />
+
+<div style="font-size:0.78rem;line-height:1.4;">
+<strong style="color:var(--cream);">Verletzungsbeispiel:</strong> Lessons-Learned-Bericht enthält KI-Auswertungen, die intern „aus Datenschutzgründen" gelöscht wurden — spätere BaFin-Prüfung kann nichts mehr verifizieren.
+</div>
+
+<p class="mono" style="font-size:0.6rem;color:var(--cream-50);margin-top:0.5rem;">Anker: <SourceBadge short="NIST AI 100-1, S. 15–16" full="NIST AI 100-1, Abschn. 3.4 Accountable and Transparent." /> · <SourceBadge short="NIST GOVERN 1.4, S. 22" full="NIST AI 100-1, GOVERN 1.4: transparent policies, procedures, and other controls." /> · AI Act Art. 12, 14</p>
 </div>
 
 <div class="panel panel-gold">
-<div class="kicker">Neue Rechtslage (RL 2024/2853)</div>
-<ul style="font-size:0.85rem;list-style:none;padding:0;">
-<li style="margin:0.5rem 0;">🟡 <strong>Art. 4 Nr. 1 S. 2:</strong> Software ist Produkt</li>
-<li style="margin:0.5rem 0;">🟡 <strong>ErwG 3:</strong> KI explizit erfasst</li>
-<li style="margin:0.5rem 0;">🟡 <strong>Art. 4 Abs. 3, 4:</strong> auch „related services" (Cloud, Datenlieferdienste) als Komponente</li>
-<li style="margin:0.5rem 0;">🟡 <strong>Art. 8 Abs. 2:</strong> Integrator = „refurbisher" → Haftungsübernahme möglich</li>
-</ul>
+<div class="kicker">Revisionssicherheit (Tamper-evidence)</div>
+<p style="font-size:0.85rem;line-height:1.4;margin:0.3rem 0;">Versionsstände, Zeitstempel und Autoren-/Modellsignaturen sind <strong>manipulationssicher</strong> festgehalten — nachträgliche Änderungen sind erkennbar.</p>
+
+<hr class="hairline" style="margin:0.6rem 0;" />
+
+<div style="font-size:0.78rem;line-height:1.4;">
+<strong style="color:var(--cream);">Verletzungsbeispiel:</strong> Statusbericht wird nach dem Lenkungsausschuss „nachgeschärft", die ursprüngliche KI-Fassung verschwindet — Beweisführung in einem späteren Haftungsprozess (LG-Kiel-Linie) wird unmöglich.
+</div>
+
+<p class="mono" style="font-size:0.6rem;color:var(--cream-50);margin-top:0.5rem;">Anker: <SourceBadge short="NIST AI 100-1, S. 15" full="NIST AI 100-1, Abschn. 3.3 Secure and Resilient — confidentiality, integrity, availability." /> · AI Act Art. 12 · DSGVO Art. 5 Abs. 1 lit. e (Speicherbegrenzung)</p>
 </div>
 
 </div>
 
-<div class="panel" style="margin-top:1rem;background:rgba(139,58,58,0.08);border-color:var(--rust);">
-<div class="kicker" style="color:var(--rust);">Beweiserleichterungen — Art. 10 ProdHaftRL</div>
-<p style="font-size:0.82rem;margin:0.3rem 0;">① Fehlerhaftigkeit wird <strong>vermutet</strong> bei verschwiegenen Informationen / nicht eingehaltenen Sicherheitsstandards / offensichtlichem Versagen bei normaler Nutzung.</p>
-<p style="font-size:0.82rem;margin:0.3rem 0;">② Kausalzusammenhang wird <strong>vermutet</strong>, wenn Fehler offensichtlich und Schaden typisch ist (Abs. 3).</p>
-<p style="font-size:0.82rem;margin:0.3rem 0;">③ In „besonders komplizierten Fällen" werden <strong>beide</strong> vermutet, wenn Kläger Wahrscheinlichkeit nachweist (Abs. 4).</p>
-</div>
-
-<p class="mono" style="font-size:0.65rem;color:var(--cream-50);margin-top:0.8rem;">
-Quellen: <SourceBadge short="WD-7-004-25, S. 9–12" full="Wissenschaftliche Dienste des Bundestags (2025). Sachstand WD 7 - 3000 - 004/25, S. 9–12 (Kap. 4.2 Herstellerhaftung)." /> · <SourceBadge short="RL (EU) 2024/2853, Art. 4, 8, 10" full="Richtlinie (EU) 2024/2853 vom 23. Oktober 2024 über die Haftung für fehlerhafte Produkte." />
+<p style="margin-top:1rem;font-size:0.85rem;color:var(--cream-70);font-family:var(--font-display);font-style:italic;line-height:1.4;">
+Die beiden Dimensionen sind die Brücke zur <strong>Beweisfähigkeit im Prozess</strong> (§ 416 ZPO, Folie 12) und zu den <strong>DORA-Vertragsmindestpflichten</strong> (Art. 30 DORA, Folie 17). Wer KI-Doku ohne Audit-Spur nutzt, gibt im Streitfall die Beweisführung aus der Hand.
 </p>
 
 <!--
 Sprechleitfaden · 60 s
-- Kernbotschaft: Paradigmenwechsel — Software/KI ist jetzt Produkt im Sinne der ProdHaftRL
-- Die dreifache Beweisvermutung (Art. 10 Abs. 3, 4) ist die eigentliche Systemveränderung: Beweislast kippt strukturell zulasten des Herstellers
-- „Refurbisher"-Status: Wer eine KI substantiell modifiziert (Finetuning!), kann selbst zum Hersteller werden
+- Auditierbarkeit + Revisionssicherheit zentral für regulierten Kontext
+- Beide Verletzungsbeispiele real beobachtbar
+- Brücke zu Block III (§ 416 ZPO) und Block IV (DORA Art. 30) ankündigen
+- Block I/II Quintessenz: Qualität ist messbar, dokumentierbar, einklagbar
 -->
 
 ---
 
-# § 823 BGB + LG Kiel — <em style="font-style:italic;color:var(--gold);">„Zu eigen gemacht"</em>
+<div class="section-layout" style="display:flex;align-items:center;padding:4rem 6rem;height:100%;">
+  <div class="section-inner stagger" style="max-width:70ch;">
+    <div class="section-label">Teil III · Folien 10–14</div>
+    <h1 class="section-title" style="font-size:clamp(2.6rem,5.5vw,4rem);font-weight:300;font-style:italic;line-height:1.05;margin:1rem 0;">Wer <em style="font-style:normal;color:var(--gold);">haftet</em>?</h1>
+    <hr class="hairline" />
+    <p style="font-family:var(--font-display);font-size:1.05rem;font-weight:300;font-style:italic;color:var(--cream-70);max-width:55ch;margin-top:0.8rem;">§ 633 BGB · § 823 BGB + LG Kiel · § 416 ZPO · EU AI Act + DSGVO — und die Verteilung auf vier Rollen.</p>
+  </div>
+</div>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:1rem;" class="stagger">
+<!--
+Sprechleitfaden · 20 s
+- Block III ist mengenmäßig größter Teil
+- Vier Normen + Matrix
+-->
+
+---
+
+# § 633 BGB — KI-Doku als <em style="font-style:italic;color:var(--gold);">mangelhaftes Werk</em>
+
+<div style="display:grid;grid-template-columns:1.1fr 1fr;gap:1.2rem;margin-top:0.8rem;" class="stagger">
 
 <div>
-<div class="kicker">LG Kiel, 29.02.2024 · Az. 6 O 151/23</div>
-<p style="font-size:0.9rem;margin-top:0.6rem;">
-Der Plattformbetreiber einer KI-gestützten Suchmaschine haftet <strong>als Verwender der Software</strong> für KI-generierte Falschinformationen — nach allgemeinen deliktischen Grundsätzen (§ 823 Abs. 1 BGB).
+<div class="kicker">Mangelbegriff § 633 Abs. 2 BGB</div>
+<ul style="font-size:0.78rem;list-style:none;padding:0;margin:0.3rem 0;">
+<li style="margin:0.3rem 0;padding-left:0.8rem;border-left:2px solid var(--gold-muted);">S. 1 — vereinbarte Beschaffenheit</li>
+<li style="margin:0.3rem 0;padding-left:0.8rem;border-left:2px solid var(--gold-muted);">S. 2 Nr. 1 — vorausgesetzte Verwendung</li>
+<li style="margin:0.3rem 0;padding-left:0.8rem;border-left:2px solid var(--gold-muted);">S. 2 Nr. 2 — übliche Beschaffenheit</li>
+</ul>
+
+<div class="kicker" style="margin-top:0.8rem;">Ansprüche § 634 BGB</div>
+<p style="font-size:0.75rem;color:var(--cream-70);line-height:1.35;margin:0.3rem 0;">Nacherfüllung (§ 635) · Selbstvornahme (§ 637) · Rücktritt/Minderung (§§ 636, 638) · Schadensersatz (§§ 634 Nr. 4, 280 ff.). Verjährung nach § 634a Abs. 1 Nr. 3 BGB: <strong>3 Jahre</strong>.</p>
+</div>
+
+<div class="panel">
+<div class="kicker">Typische Mängel KI-Doku</div>
+<table style="font-size:0.72rem;width:100%;border-collapse:collapse;margin-top:0.3rem;">
+<tr style="border-bottom:1px solid var(--gold-muted);"><td style="padding:0.3rem 0.4rem;color:var(--cream);"><strong>Halluzinationen</strong></td><td style="padding:0.3rem;color:var(--cream-70);">Abweichung S. 1 + S. 2 Nr. 1</td></tr>
+<tr style="border-bottom:1px solid var(--gold-muted);"><td style="padding:0.3rem 0.4rem;color:var(--cream);"><strong>Fehlende Auditierbarkeit</strong></td><td style="padding:0.3rem;color:var(--cream-70);">Untauglichkeit übl. Verwendung S. 2 Nr. 2 (regulierte Kontexte)</td></tr>
+<tr style="border-bottom:1px solid var(--gold-muted);"><td style="padding:0.3rem 0.4rem;color:var(--cream);"><strong>Misgrounded Zitate</strong></td><td style="padding:0.3rem;color:var(--cream-70);">S. 1 — schwer entdeckbar</td></tr>
+<tr style="border-bottom:1px solid var(--gold-muted);"><td style="padding:0.3rem 0.4rem;color:var(--cream);"><strong>Unvollständigkeit</strong></td><td style="padding:0.3rem;color:var(--cream-70);">§ 633 Abs. 2 S. 3 BGB analog</td></tr>
+<tr><td style="padding:0.3rem 0.4rem;color:var(--cream);"><strong>Bias/Diskriminierung</strong></td><td style="padding:0.3rem;color:var(--cream-70);">S. 1 + Rechtsmangel § 633 Abs. 3</td></tr>
+</table>
+</div>
+
+</div>
+
+<div class="panel panel-gold" style="margin-top:0.8rem;padding:0.7rem 1rem;">
+<p style="font-size:0.85rem;color:var(--cream);font-style:italic;font-family:var(--font-display);line-height:1.4;margin:0;">Wer KI-Doku als Werk schuldet, schuldet sie <strong>halluzinationsfrei oder nachvollziehbar geprüft</strong> — die §§ 633 ff. BGB kennen keinen „AI-Bonus".</p>
+<p class="mono" style="font-size:0.6rem;color:var(--cream-50);margin-top:0.4rem;">AGB-Schranke: Pauschale Freizeichnung scheitert an §§ 309 Nr. 7, 307 BGB (Kardinalpflichten, grobe Fahrlässigkeit). Eigenständige juristische Analyse, gestützt auf BGB.</p>
+</div>
+
+<!--
+Sprechleitfaden · 75 s
+- § 633 ist die WICHTIGE Lücke der bisherigen KI-Recht-Diskussion — meist wird nur § 823 diskutiert
+- IT-Beratungs-Werkverträge schulden meist Erfolg, nicht Tätigkeit
+- Tabelle Mängel zeigt: alle 5 Qualitätsdimensionen sind werkvertragsrechtlich relevant
+- Konsens-Satz Gold-Panel als Take-away
+-->
+
+---
+
+# § 823 BGB + LG Kiel — <em style="font-style:italic;color:var(--gold);">„zu eigen gemacht"</em>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:0.8rem;" class="stagger">
+
+<div>
+<div class="kicker">LG Kiel · 29.02.2024 · 6 O 151/23</div>
+<p style="font-size:0.85rem;line-height:1.4;margin:0.4rem 0;">
+Plattformbetreiber haftet als Verwender der KI-Software für KI-generierte Falschinformationen — nach § 823 Abs. 1 BGB.
 </p>
-<p class="pull-quote" style="font-size:1.05rem;margin-top:0.8rem;">
+<p class="pull-quote" style="font-size:1rem;margin-top:0.6rem;">
 „Der Betreiber haftet auch für von Dritten eingestellte falsche Informationen, wenn er sie sich aus Nutzersicht <em>zu eigen macht</em> und erkennbar die inhaltliche Verantwortung übernimmt."
 </p>
-<p class="mono" style="font-size:0.65rem;color:var(--cream-50);"><SourceBadge short="LG Kiel, 2024" full="LG Kiel, Urteil vom 29.02.2024 – 6 O 151/23, GRUR-RS 2024, 29599, Rn. 36." /> · ergänzend <SourceBadge short="WD-7-004-25, S. 8–9" full="Wissenschaftliche Dienste des Bundestags (2025). Sachstand WD 7 - 3000 - 004/25, S. 8–9 (Kap. 4.1 Haftung des Anwenders)." /></p>
+<p class="mono" style="font-size:0.6rem;color:var(--cream-50);"><SourceBadge short="LG Kiel, 2024" full="LG Kiel, Urteil vom 29.02.2024 – 6 O 151/23, GRUR-RS 2024, 29599, Rn. 36." /> · <SourceBadge short="WD-7-004-25, S. 8–9" full="Wissenschaftliche Dienste des Bundestages (2025). Sachstand WD 7 - 3000 - 004/25, S. 8–9." /></p>
 </div>
 
 <div class="panel">
 <div class="kicker">PM-Transfer: Wann „zu eigen"?</div>
-<ul style="font-size:0.85rem;list-style:none;padding:0;">
-<li style="margin:0.5rem 0;">— KI-Texte <strong>unverändert</strong> in Statusbericht, Steering-Vorlage, Kunden-Deliverable</li>
-<li style="margin:0.5rem 0;">— Veröffentlichung im eigenen Namen (Chatbot, automatisierte Kundenantwort)</li>
-<li style="margin:0.5rem 0;">— erkennbare Verantwortungsübernahme („<em>Unsere</em> Risiko-Analyse zeigt …")</li>
-<li style="margin:0.5rem 0;">— auch ohne explizite Prüfung oder Kennzeichnung</li>
+<ul style="font-size:0.8rem;list-style:none;padding:0;">
+<li style="margin:0.4rem 0;">— KI-Texte <strong>unverändert</strong> in Statusbericht / Steering-Vorlage / Kunden-Deliverable</li>
+<li style="margin:0.4rem 0;">— Veröffentlichung im eigenen Namen (Chatbot, automatisierte Mandantenantwort)</li>
+<li style="margin:0.4rem 0;">— erkennbare Verantwortungsübernahme („<em>Unsere</em> Risiko-Analyse zeigt …")</li>
+<li style="margin:0.4rem 0;">— auch ohne explizite Prüfung oder Kennzeichnung</li>
 </ul>
-<hr class="hairline" style="margin:0.8rem 0;" />
-<p style="font-size:0.8rem;color:var(--cream);">Ergänzend: § 630h BGB — Beweislastumkehr im Arzthaftungsrecht, analog auf KI-gestützte Diagnose anwendbar.</p>
+<hr class="hairline" style="margin:0.6rem 0;" />
+<p style="font-size:0.75rem;color:var(--cream);line-height:1.4;">Ergänzend: <strong>§ 630h Abs. 1 BGB</strong> — Beweislastumkehr im Arzthaftungsrecht, analog auf KI-gestützte Diagnose anwendbar.</p>
 </div>
 
 </div>
 
 <!--
 Sprechleitfaden · 70 s
-- LG Kiel ist das erste deutsche Urteil, das KI-Haftung konkret adjudiziert
-- „Zu eigen machen" ist der zentrale Begriff — subtil, aber folgenreich
-- Die vier PM-Konstellationen rechts decken 90% der Projektalltag-Fälle ab
-- § 630h als Klammer: medizinische Projekte haben eine noch schärfere Beweislastregel
+- LG Kiel ist das erste deutsche KI-Haftungsurteil — wegweisend
+- "Zu eigen machen" ist der zentrale Begriff
+- Die vier PM-Konstellationen rechts decken den Praxisalltag ab
+- § 630h Brücke für medizinische Projektkontexte
 -->
 
 ---
 
-# Vier Rollen, <em style="font-style:italic;color:var(--gold);">eine Wertschöpfungskette</em>
+# § 416 ZPO — KI-Doku als <em style="font-style:italic;color:var(--gold);">Privaturkunde</em>?
 
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.5rem;" class="stagger">
+<div style="display:grid;grid-template-columns:1.2fr 1fr;gap:1.2rem;margin-top:0.8rem;" class="stagger">
 
-<div class="panel" style="text-align:center;">
-<div class="mono" style="color:var(--gold);font-size:0.7rem;letter-spacing:0.2em;">01</div>
-<h3 style="font-size:1rem;margin:0.4rem 0;">Hersteller</h3>
-<p style="font-size:0.78rem;color:var(--cream-70);">Anbieter des KI-Systems (z. B. OpenAI, Anthropic). Eintrittspunkt in die Haftungskette — ProdHaftRL-Gefährdungshaftung + Produzentenhaftung mit Beweislastumkehr.</p>
-</div>
-
-<div class="panel" style="text-align:center;">
-<div class="mono" style="color:var(--gold);font-size:0.7rem;letter-spacing:0.2em;">02</div>
-<h3 style="font-size:1rem;margin:0.4rem 0;">Betreiber</h3>
-<p style="font-size:0.78rem;color:var(--cream-70);">Einsetzendes Unternehmen. Deliktische + vertragliche Haftung, besonders bei „zu eigen gemachten" Ausgaben (LG Kiel). AI-Act-Pflichten nach Art. 26.</p>
-</div>
-
-<div class="panel" style="text-align:center;">
-<div class="mono" style="color:var(--gold);font-size:0.7rem;letter-spacing:0.2em;">03</div>
-<h3 style="font-size:1rem;margin:0.4rem 0;">Anwender</h3>
-<p style="font-size:0.78rem;color:var(--cream-70);">Individueller Mitarbeiter. Persönlich verantwortlich für im eigenen Namen verwendete KI-Inhalte; Prüfpflicht gegen Halluzinationen und Bias.</p>
-</div>
-
-<div class="panel panel-gold" style="text-align:center;">
-<div class="mono" style="color:var(--gold);font-size:0.7rem;letter-spacing:0.2em;">04</div>
-<h3 style="font-size:1rem;margin:0.4rem 0;">Projektleitung</h3>
-<p style="font-size:0.78rem;color:var(--cream-70);">Auswahl-, Instruktions- und Überwachungspflichten. Organisiert Human Oversight (Art. 14 AI Act) und ist <strong>Adressat</strong> von Compliance-Rückfragen.</p>
-</div>
-
-</div>
-
-<p style="margin-top:1.8rem;font-family:var(--font-display);font-style:italic;text-align:center;color:var(--cream);">
-→ Welche Rechtsgrundlage, welche Rechtsprechung, welche Beweislast trifft wen?
+<div>
+<p style="font-size:0.85rem;line-height:1.45;margin:0.3rem 0;">
+<strong>§ 416 ZPO:</strong> „Privaturkunden begründen, sofern sie von dem Aussteller unterschrieben oder mittels notariell beglaubigten Handzeichens unterzeichnet sind, vollen Beweis dafür, dass die in ihnen enthaltenen Erklärungen von dem Aussteller abgegeben sind."
 </p>
 
+<div class="panel" style="margin-top:0.7rem;padding:0.7rem 0.9rem;">
+<div class="kicker" style="color:var(--rust);">Reine KI-Erzeugnisse</div>
+<p style="font-size:0.78rem;line-height:1.4;margin:0.2rem 0;">Kein menschlicher Aussteller, keine Zurechenbarkeit → <strong>keine Urkunde</strong>. Allenfalls Augenscheinsobjekt nach § 371 ZPO (freie Beweiswürdigung, § 286 ZPO).</p>
+</div>
+
+<div class="panel panel-gold" style="margin-top:0.6rem;padding:0.7rem 0.9rem;">
+<div class="kicker">Menschliche Freigabe schafft Urkundenqualität</div>
+<ul style="font-size:0.75rem;list-style:none;padding:0;">
+<li style="margin:0.25rem 0;">✓ <strong>Klassisch:</strong> PL prüft, korrigiert, unterschreibt KI-Statusbericht → § 416 ZPO greift</li>
+<li style="margin:0.25rem 0;">✓ <strong>Elektronisch:</strong> PDF mit qualifizierter elektronischer Signatur (eIDAS, § 126a BGB) → § 371a Abs. 1 ZPO erweitert § 416 ZPO entsprechend</li>
+<li style="margin:0.25rem 0;color:var(--rust);">✗ <strong>Nicht ausreichend:</strong> Workflow-Approval ohne qeS, einfache E-Mail-Zustimmung, Footer „erstellt durch KI"</li>
+</ul>
+</div>
+</div>
+
+<div class="panel">
+<div class="kicker">Brücke zum LG Kiel</div>
+<p style="font-size:0.78rem;line-height:1.4;">§ 416 ZPO und LG Kiel laufen <strong>kongruent, aber dogmatisch getrennt</strong>:</p>
+<table style="font-size:0.72rem;width:100%;margin-top:0.4rem;border-collapse:collapse;">
+<tr style="border-bottom:1px solid var(--gold-muted);"><td style="padding:0.3rem;color:var(--gold);">§ 416 ZPO</td><td style="padding:0.3rem;color:var(--cream-70);"><strong>formell</strong> — Erklärung wurde abgegeben</td></tr>
+<tr><td style="padding:0.3rem;color:var(--gold);">LG Kiel</td><td style="padding:0.3rem;color:var(--cream-70);"><strong>materiell</strong> — Inhalt wurde zu eigen gemacht, Haftung folgt</td></tr>
+</table>
+<hr class="hairline" style="margin:0.7rem 0;" />
+<p style="font-size:0.78rem;color:var(--cream);font-style:italic;font-family:var(--font-display);line-height:1.4;">Ohne signierte Freigabe ist KI-Doku im Streitfall nur Augenscheinsobjekt — die Signatur ist die <strong>einzige zivilprozessual wirksame Versicherungspolice</strong>.</p>
+</div>
+
+</div>
+
 <!--
-Sprechleitfaden · 45 s
-- Vier Rollen benennen, nicht durchdeklinieren — das macht die Matrix auf Folie 13
-- Visuell die Kette betonen: 01 → 02 → 03 → 04
-- Projektleitung bewusst am Ende und Gold hervorgehoben — die eigentliche Zielgruppe des Decks
+Sprechleitfaden · 70 s
+- § 416 ZPO ist der LL.M.-Hebel — vom Prof explizit angefragt
+- Kernaussage: ohne Signatur keine Urkunde, nur Augenscheinsobjekt
+- Goldene Liste rechts oben — drei Varianten klar machen
+- Brücke LG Kiel: zwei Spuren, kongruent aber dogmatisch getrennt
+-->
+
+---
+
+# AI Act + DSGVO — die <em style="font-style:italic;color:var(--gold);">EU-Klammer</em>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:0.8rem;" class="stagger">
+
+<div class="panel">
+<div class="kicker">EU AI Act (VO 2024/1689)</div>
+<table style="font-size:0.72rem;width:100%;border-collapse:collapse;margin-top:0.3rem;">
+<tr style="border-bottom:1px solid var(--gold-muted);"><td style="padding:0.25rem;color:var(--gold);width:80px;">Art. 4</td><td style="padding:0.25rem;color:var(--cream-70);">KI-Kompetenz von Personal sicherstellen</td></tr>
+<tr style="border-bottom:1px solid var(--gold-muted);"><td style="padding:0.25rem;color:var(--gold);">Art. 12</td><td style="padding:0.25rem;color:var(--cream-70);">Aufzeichnungspflichten für Hochrisiko-KI</td></tr>
+<tr style="border-bottom:1px solid var(--gold-muted);"><td style="padding:0.25rem;color:var(--gold);">Art. 13</td><td style="padding:0.25rem;color:var(--cream-70);">Transparenz / Information für Deployer</td></tr>
+<tr style="border-bottom:1px solid var(--gold-muted);"><td style="padding:0.25rem;color:var(--gold);">Art. 14</td><td style="padding:0.25rem;color:var(--cream-70);"><strong>Human Oversight</strong> — wirksame Aufsicht</td></tr>
+<tr style="border-bottom:1px solid var(--gold-muted);"><td style="padding:0.25rem;color:var(--gold);">Art. 15</td><td style="padding:0.25rem;color:var(--cream-70);">Genauigkeit, Robustheit, Cybersicherheit</td></tr>
+<tr><td style="padding:0.25rem;color:var(--gold);">Art. 25</td><td style="padding:0.25rem;color:var(--cream-70);">Rollen-Flip: Betreiber → Anbieter bei Zweckänderung</td></tr>
+</table>
+</div>
+
+<div class="panel">
+<div class="kicker">DSGVO bei KI-Projektdoku</div>
+<table style="font-size:0.72rem;width:100%;border-collapse:collapse;margin-top:0.3rem;">
+<tr style="border-bottom:1px solid var(--gold-muted);"><td style="padding:0.25rem;color:var(--gold);width:80px;">Art. 5</td><td style="padding:0.25rem;color:var(--cream-70);">Grundsätze: Zweckbindung, Datenminimierung, Speicherbegrenzung</td></tr>
+<tr style="border-bottom:1px solid var(--gold-muted);"><td style="padding:0.25rem;color:var(--gold);">Art. 22</td><td style="padding:0.25rem;color:var(--cream-70);">Verbot ausschl. autom. Entscheidungen mit Rechtsfolge</td></tr>
+<tr style="border-bottom:1px solid var(--gold-muted);"><td style="padding:0.25rem;color:var(--gold);">Art. 28</td><td style="padding:0.25rem;color:var(--cream-70);">AVV bei KI-Anbieter (OpenAI, Anthropic …)</td></tr>
+<tr style="border-bottom:1px solid var(--gold-muted);"><td style="padding:0.25rem;color:var(--gold);">Art. 32</td><td style="padding:0.25rem;color:var(--cream-70);">Sicherheit der Verarbeitung</td></tr>
+<tr><td style="padding:0.25rem;color:var(--gold);">Art. 35</td><td style="padding:0.25rem;color:var(--cream-70);"><strong>DSFA-Pflicht</strong> bei systematischer KI-Bewertung</td></tr>
+</table>
+</div>
+
+</div>
+
+<div class="panel" style="margin-top:0.8rem;padding:0.7rem 1rem;">
+<p style="font-size:0.78rem;line-height:1.4;color:var(--cream);font-style:italic;font-family:var(--font-display);margin:0;">
+<strong>Dreifach-Sandwich:</strong> Eine KI-gestützte HR-Bewerber-Bewertung in einem Bank-Projekt unterliegt <strong>Art. 22 DSGVO</strong> (Verbot rein automatisierter Entscheidung) + <strong>Anhang III AI Act</strong> (Hochrisiko-System) + <strong>§ 22 BDSG / DGUV</strong>. Drei parallele Erlaubnis- und Pflichtenrahmen, die gleichzeitig erfüllt werden müssen.
+</p>
+</div>
+
+<!--
+Sprechleitfaden · 60 s
+- Zwei Tabellen knapp vorstellen — nicht jede Norm einzeln durchgehen
+- Art. 22 DSGVO als Scharnier — am häufigsten unterschätzte Norm
+- Dreifach-Sandwich-Beispiel: HR + FinServ ist der härteste Use Case
 -->
 
 ---
@@ -431,248 +530,263 @@ Sprechleitfaden · 45 s
 <HaftungsMatrix />
 
 <!--
-Sprechleitfaden · 150 s — HERZSTÜCK DES DECKS
-- Einstieg: „Wählen Sie eine Rolle aus — wir gehen sie durch."
-- Empfohlene Reihenfolge beim Vortrag: Projektleitung (04) zuerst — das ist die Zielgruppe; dann Hersteller (01) für Kontrast
-- Pro Rolle die 4 Dimensionen kurz anreißen, ABER nicht vorlesen — die Folie ist Nachlesestoff. Pointe pro Rolle:
-  - Hersteller: Beweislastumkehr ist strukturell
-  - Betreiber: LG Kiel schlägt hier direkt ein
-  - Anwender: AI Act Art. 4 adressiert den Betreiber, nicht den Mitarbeiter — ABER der Mitarbeiter haftet persönlich deliktisch
-  - Projektleitung: Dokumentationsmängel wirken haftungsverschärfend (Parallele § 630h)
-- Bei Fragen: Quellenangaben sind unten eingeblendet
-- Diese Folie rechtfertigt die 150 s — nicht beschleunigen
--->
-
----
-
-# Regulierte Industrien — <em style="font-style:italic;color:var(--gold);">Zusatzpflichten</em>
-
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-top:1rem;" class="stagger">
-
-<div class="panel">
-<div class="kicker">Financial Services</div>
-<p style="font-size:0.82rem;">BaFin/Bundesbank/EZB-Aufsicht vergrößert den Adressatenkreis. Know-Your-Prinzipien (Customer, Transaction, Process) strukturieren Compliance-Datenarchitektur bei KI-Onboarding und Geldwäsche-Screening. <SourceBadge short="Bitkom, 2017, S. 2–5" full="Bitkom e.V. (2017). IT-gestützte Compliance im Finanzsektor — Konzept und Vorgehensweise, S. 2–5." /></p>
-<p style="font-size:0.75rem;color:var(--cream-50);margin-top:0.4rem;font-style:italic;">Sektoral ergänzend (nicht in Primärquelle): MaRisk AT 4.3.1, BAIT, DORA (seit 17.01.2025).</p>
-</div>
-
-<div class="panel">
-<div class="kicker">Health Care</div>
-<p style="font-size:0.82rem;">§ 630h Abs. 1 BGB (Beweislastumkehr bei Behandlungsfehlern) ist auf KI-gestützte Diagnosesysteme anwendbar. Halluzinationen im medizinischen Kontext können zu „rechtlichen Nachteilen" führen. <SourceBadge short="WD-7-004-25, S. 8–9, 13" full="Wissenschaftliche Dienste (2025), S. 8–9, 13." /></p>
-<p style="font-size:0.75rem;color:var(--cream-50);margin-top:0.4rem;font-style:italic;">Sektoral ergänzend: MDR (VO 2017/745) für Software-as-Medical-Device.</p>
-</div>
-
-<div class="panel">
-<div class="kicker">Öffentliche Hand</div>
-<p style="font-size:0.82rem;">BMI-BeKI listet 179 KI-Systeme der Bundesverwaltung (Stand 02/2025). BMJ-Digitalisierungsinitiative für die Justiz: Sprachmodell, Aktenstrukturierung, Massenverfahren-Assistenz. BSI teilt Risiken in 3 Kategorien. <SourceBadge short="WD-7-004-25, S. 4–8, 14–15" full="Wissenschaftliche Dienste (2025), S. 4–8, 14–15." /></p>
-</div>
-
-</div>
-
-<p style="margin-top:1rem;font-size:0.82rem;color:var(--cream-70);font-family:var(--font-display);font-style:italic;">
-Drei Sektoren, drei Logiken — eine gemeinsame Forderung: <strong>Dokumentieren, was KI tut.</strong>
-</p>
-
-<!--
-Sprechleitfaden · 65 s
-- Transparent sein: MaRisk/BAIT/DORA sind sektorales Allgemeinwissen, nicht aus den Primärquellen der heutigen Lektüre belegt — deshalb in kursiv und klar gekennzeichnet
-- § 630h ist der stärkste Einzelpunkt: medizinische Projekte haben eine schon heute scharfe Beweislastregel
-- Öffentliche Hand als dritter Anker: der Staat ist längst KI-Anwender — 179 Systeme
+Sprechleitfaden · 130 s — INTERAKTIVES HERZSTÜCK
+- "Wählen Sie eine Rolle"
+- Empfohlene Reihenfolge: Projektleitung (04) → Hersteller (01) für Kontrast
+- Pro Rolle Pointe:
+  - Hersteller: Beweislastumkehr strukturell (Art. 10 ProdHaftRL)
+  - Betreiber: LG Kiel schlägt direkt ein
+  - Anwender: persönliche deliktische Haftung trotz Art. 4
+  - Projektleitung: Dokumentationsmängel = § 630h-Parallele
+- Quellen sind unten eingeblendet
 -->
 
 ---
 
 <div class="section-layout" style="display:flex;align-items:center;padding:4rem 6rem;height:100%;">
   <div class="section-inner stagger" style="max-width:70ch;">
-    <div class="section-label">Teil III · Folien 16–19</div>
-    <h1 class="section-title" style="font-size:clamp(2.8rem,6vw,4.4rem);font-weight:300;font-style:italic;line-height:1.05;margin:1rem 0;">Die <em style="font-style:normal;color:var(--gold);">Praxis</em></h1>
+    <div class="section-label">Teil IV · Folien 16–19</div>
+    <h1 class="section-title" style="font-size:clamp(2.6rem,5.5vw,4rem);font-weight:300;font-style:italic;line-height:1.05;margin:1rem 0;">Der <em style="font-style:normal;color:var(--gold);">Governance-Rahmen</em></h1>
     <hr class="hairline" />
-    <p style="font-family:var(--font-display);font-size:1.1rem;font-weight:300;font-style:italic;color:var(--cream-70);max-width:55ch;margin-top:0.8rem;">Governance, vier Praktiken, fünf Empfehlungen — so wird aus der Rechtslage Projektalltag.</p>
+    <p style="font-family:var(--font-display);font-size:1.05rem;font-weight:300;font-style:italic;color:var(--cream-70);max-width:55ch;margin-top:0.8rem;">Drei Ebenen · DORA × MaRisk · BaFin · Bitkom — wie Compliance im FinServ-Projekt operativ wird.</p>
   </div>
 </div>
 
 <!--
 Sprechleitfaden · 15 s
-- Schneller Übergang
-- Deutlich machen: ab hier konkrete Handlungsebene
+- Block IV — konkrete Governance
+- Praxisorientierter, weniger Norm-Diskussion
 -->
 
 ---
 
-# NIST AI RMF × Projektrollen
+# Drei-Ebenen-Modell
 
-<div style="display:grid;grid-template-columns:1fr 1.3fr;gap:1.5rem;margin-top:1rem;" class="stagger">
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;margin-top:1rem;" class="stagger">
 
-<div>
-<div class="kicker">Die vier Kernfunktionen</div>
-<ul style="list-style:none;padding:0;font-size:0.85rem;">
-<li style="margin:0.6rem 0;padding:0.5rem 0.8rem;border-left:2px solid var(--gold);"><strong style="color:var(--gold);">GOVERN</strong> — Risk-Management-Kultur; quer zu allem.</li>
-<li style="margin:0.6rem 0;padding:0.5rem 0.8rem;border-left:2px solid var(--gold-muted);"><strong>MAP</strong> — Kontext und Risiken eines KI-Systems identifizieren.</li>
-<li style="margin:0.6rem 0;padding:0.5rem 0.8rem;border-left:2px solid var(--gold-muted);"><strong>MEASURE</strong> — quantitativ/qualitativ analysieren, monitoren.</li>
-<li style="margin:0.6rem 0;padding:0.5rem 0.8rem;border-left:2px solid var(--gold-muted);"><strong>MANAGE</strong> — Ressourcen zuweisen, Incidents behandeln.</li>
-</ul>
-<p class="mono" style="font-size:0.65rem;color:var(--cream-50);"><SourceBadge short="NIST AI 100-1, S. 20–33" full="NIST (2023). Artificial Intelligence Risk Management Framework (AI RMF 1.0), NIST AI 100-1, Abschnitt 5, S. 20–33." /></p>
+<div class="panel" style="padding:0.8rem 0.9rem;">
+<div class="mono" style="color:var(--gold);font-size:0.55rem;letter-spacing:0.2em;">EBENE 01</div>
+<h3 style="font-size:1.1rem;margin:0.3rem 0;color:var(--cream);">Strategisch</h3>
+<p style="font-size:0.72rem;color:var(--cream-70);margin:0.3rem 0;"><strong>Wer:</strong> PAG, PLA, PMO-Leitung</p>
+<p style="font-size:0.72rem;color:var(--cream-70);margin:0.3rem 0;"><strong>Was:</strong> KI-Policy, Use-Case-Schwellwerte, Risikoappetit, Hochrisiko-Klassifizierung, Schulungsbudget (Art. 4 AI Act)</p>
+<p style="font-size:0.72rem;color:var(--cream-70);margin:0.3rem 0;"><strong>Artefakte:</strong> KI-Policy, Charta-Klausel, AI-Inventar</p>
+<p class="mono" style="font-size:0.58rem;color:var(--cream-50);margin-top:0.4rem;">NIST GOVERN (S. 21–23)</p>
 </div>
 
-<div class="panel">
-<div class="kicker">Übersetzung in PM-Rollen</div>
-<div style="display:grid;grid-template-columns:auto 1fr;gap:0.4rem 0.8rem;font-size:0.78rem;">
-<strong style="color:var(--gold);">Govern</strong>
-<span>PAG + PLA / PMO — KI-Leitlinie und Freigabeprozess in Projektcharta</span>
-<strong style="color:var(--gold);">Map</strong>
-<span>PL + Risk Owner — KI-Risiken ins Risikoregister</span>
-<strong style="color:var(--gold);">Measure</strong>
-<span>PMO / Data-Steward — KPIs für KI-Output, TEVV-Praktiken</span>
-<strong style="color:var(--gold);">Manage</strong>
-<span>PL operativ, PLA bei Eskalation — HITL, Incident-Response</span>
-</div>
-<p style="font-size:0.7rem;color:var(--cream-50);font-style:italic;margin-top:0.6rem;">Synthese aus NIST + WINGS-Modulkapiteln (Rollen K1 / K4).</p>
+<div class="panel panel-gold" style="padding:0.8rem 0.9rem;">
+<div class="mono" style="color:var(--gold);font-size:0.55rem;letter-spacing:0.2em;">EBENE 02</div>
+<h3 style="font-size:1.1rem;margin:0.3rem 0;color:var(--cream);">Taktisch</h3>
+<p style="font-size:0.72rem;color:var(--cream-70);margin:0.3rem 0;"><strong>Wer:</strong> PMO, PL, Risk Owner, Quality Lead</p>
+<p style="font-size:0.72rem;color:var(--cream-70);margin:0.3rem 0;"><strong>Was:</strong> Use-Case auf Risikoregister mappen, Modell-/Anbieter-Auswahl (DPA, Drittland), KPI/TEVV-Metriken, Freigabepfade</p>
+<p style="font-size:0.72rem;color:var(--cream-70);margin:0.3rem 0;"><strong>Artefakte:</strong> Use-Case-Steckbrief, AVV nach Art. 28 DSGVO, Messplan</p>
+<p class="mono" style="font-size:0.58rem;color:var(--cream-50);margin-top:0.4rem;">NIST MAP + MEASURE (S. 24–30)</p>
 </div>
 
-</div>
-
-<!--
-Sprechleitfaden · 60 s
-- NIST RMF ist freiwillig, aber inzwischen De-facto-Standard; AI Act verweist implizit darauf
-- Govern ist cross-cutting — deshalb quer gelegt, nicht sequenziell
-- Rechte Tabelle: die Zuordnung ist UNSERE Synthese aus Modulkapiteln. Wichtig für LL.M.-Prüfenden: Synthese vs. Zitat sauber trennen
--->
-
----
-
-# Vier konkrete PM-Praktiken
-
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;" class="stagger">
-
-<div class="panel">
-<div class="kicker">① Human-in-the-Loop</div>
-<p style="font-size:0.82rem;">Innerhalb der „jagged frontier" +12,2 % Output und –25,1 % Zeit; <strong>außerhalb –19 % korrekte Lösungen</strong>. „Falling asleep at the wheel"-Effekt durch überhöhtes Vertrauen.</p>
-<p style="font-size:0.8rem;color:var(--cream);margin-top:0.4rem;"><strong>Praktik:</strong> Definierte Entscheidungspunkte, an denen ein Mensch KI-Output freigibt.</p>
-<p class="mono" style="font-size:0.65rem;color:var(--cream-50);"><SourceBadge short="Dell'Acqua et al., 2026" full="Dell'Acqua, F. et al. (2026). Navigating the Jagged Technological Frontier. Organization Science (Articles in Advance), S. 1 + S. 18." /> (n = 758)</p>
-</div>
-
-<div class="panel">
-<div class="kicker">② Dokumentierte Freigabe</div>
-<p style="font-size:0.82rem;">„It is important to always check whether the information provided by AI is trustworthy and correct." Ohne Freigabeprozess Verlust von „control and oversight over processes and progress".</p>
-<p style="font-size:0.8rem;color:var(--cream);margin-top:0.4rem;"><strong>Praktik:</strong> Freigabe analog CRF-Prozess — Datum, Prüfer, Prüfumfang, Ergebnis.</p>
-<p class="mono" style="font-size:0.65rem;color:var(--cream-50);"><SourceBadge short="Almeida et al., 2025" full="Almeida, P. M., Fernandes, G. & Santos, J. M. R. C. A. (2025). Artificial intelligence tools for project management. Project Leadership and Society, 6, 100196, S. 3." /> · Modul K3 (CRF)</p>
-</div>
-
-<div class="panel">
-<div class="kicker">③ Versionierung</div>
-<p style="font-size:0.82rem;">KI-Ausgaben und menschliche Bearbeitungsstände als <strong>separate Versionen</strong> mit Zeitstempel, Autorenkennzeichnung (Mensch vs. Modellversion) und Ausgangs-Prompt ablegen.</p>
-<p style="font-size:0.8rem;color:var(--cream);margin-top:0.4rem;"><strong>Praktik:</strong> Sprint-Inkrement-Logik + Arbeitspaket-Dokumentation auf KI-Artefakte übertragen.</p>
-<p class="mono" style="font-size:0.65rem;color:var(--cream-50);">Modul K6 (Sprint Review) · K2 (Arbeitspaket). <em>Prompt-Versionierung: Synthese.</em></p>
-</div>
-
-<div class="panel">
-<div class="kicker">④ Vier-Augen-Prinzip</div>
-<p style="font-size:0.82rem;">Kritische KI-Ausgaben (Zahlen, Zitate, rechtliche Aussagen, Priorisierungen) werden durch <strong>eine zweite qualifizierte Person</strong> gegengeprüft, bevor sie in Entscheidungen einfließen.</p>
-<p style="font-size:0.8rem;color:var(--cream);margin-top:0.4rem;"><strong>Praktik:</strong> Fachstandard aus Compliance/Audit — begründet durch Frontier-Risiko (Dell'Acqua 2026).</p>
-<p class="mono" style="font-size:0.65rem;color:var(--cream-50);">Anwendung auf KI-Output: Synthese, gestützt auf <SourceBadge short="Dell'Acqua et al., 2026" full="Dell'Acqua et al. (2026), S. 1 und S. 18: empirische Evidenz des Frontier-Risikos." /> und <SourceBadge short="Bernert et al., 2024" full="Bernert, C., Scheurer, S. & Wehnes, H. (Hrsg.) (2024). KI in der Projektwirtschaft 2. UVK/Narr Francke." />.</p>
+<div class="panel" style="padding:0.8rem 0.9rem;">
+<div class="mono" style="color:var(--gold);font-size:0.55rem;letter-spacing:0.2em;">EBENE 03</div>
+<h3 style="font-size:1.1rem;margin:0.3rem 0;color:var(--cream);">Operativ</h3>
+<p style="font-size:0.72rem;color:var(--cream-70);margin:0.3rem 0;"><strong>Wer:</strong> Anwender, Reviewer, Data Steward</p>
+<p style="font-size:0.72rem;color:var(--cream-70);margin:0.3rem 0;"><strong>Was:</strong> Prompt-Formulierung, Übernahme/Ablehnung KI-Output, Versionierung + qeS-Signatur, Incident-Eskalation</p>
+<p style="font-size:0.72rem;color:var(--cream-70);margin:0.3rem 0;"><strong>Artefakte:</strong> Prompt-Log, signierte Freigabe, Incident-Report</p>
+<p class="mono" style="font-size:0.58rem;color:var(--cream-50);margin-top:0.4rem;">NIST MANAGE (S. 31–32)</p>
 </div>
 
 </div>
 
-<!--
-Sprechleitfaden · 70 s
-- Jede Praktik mit einer Quantifizierung oder einem klaren Anker: +12,2%/-25,1%/-19% für HITL ist die stärkste Zahl im Deck
-- Versionierung und Vier-Augen sind teilweise Synthese — ehrlich benennen
-- Keine der vier Praktiken ist teuer oder neu — nur die Anwendung auf KI-Output ist neu
--->
-
----
-
-# Fünf Empfehlungen für <em style="font-style:italic;color:var(--gold);">KI-einsetzende Projektleitungen</em>
-
-<div style="display:flex;flex-direction:column;gap:0.6rem;margin-top:1rem;" class="stagger">
-
-<div style="display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;padding:0.5rem 0;border-bottom:1px solid var(--gold-muted);">
-<div class="mono" style="color:var(--gold);font-size:1.4rem;">01</div>
-<div>
-<strong style="color:var(--cream);">KI-Kompetenz-Briefing mit Nachweis</strong> verankern — <em>bevor</em> Teammitglieder KI-Werkzeuge nutzen.
-<p style="font-size:0.72rem;color:var(--cream-70);margin:0.2rem 0 0;">Adressiert: unkritische Übernahme, Organisationsverschulden. <SourceBadge short="AI Act Art. 4" full="VO (EU) 2024/1689, Art. 4." /> · <SourceBadge short="NIST GOVERN 2.2" full="NIST (2023). AI RMF 1.0, S. 22, GOVERN 2.2." /></p>
-</div>
-<div class="mono" style="font-size:0.6rem;color:var(--cream-50);">PFLICHT</div>
-</div>
-
-<div style="display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;padding:0.5rem 0;border-bottom:1px solid var(--gold-muted);">
-<div class="mono" style="color:var(--gold);font-size:1.4rem;">02</div>
-<div>
-<strong style="color:var(--cream);">Freigabepfad mit benanntem Reviewer</strong> für jeden KI-Use-Case — Review-Tiefe und Dokumentation geregelt.
-<p style="font-size:0.72rem;color:var(--cream-70);margin:0.2rem 0 0;">Adressiert: Halluzinationen, Haftungslücke bei undokumentierter Übernahme. <SourceBadge short="Dell'Acqua et al., 2026" full="Dell'Acqua et al. (2026), S. 1, 18." /> · Modul K3 (CRF)</p>
-</div>
-<div class="mono" style="font-size:0.6rem;color:var(--cream-50);">PROZESS</div>
-</div>
-
-<div style="display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;padding:0.5rem 0;border-bottom:1px solid var(--gold-muted);">
-<div class="mono" style="color:var(--gold);font-size:1.4rem;">03</div>
-<div>
-<strong style="color:var(--cream);">Versionierte Trennung</strong> von KI- und Mensch-Erzeugnissen im Artefaktmanagement (PSP, Sprint).
-<p style="font-size:0.72rem;color:var(--cream-70);margin:0.2rem 0 0;">Adressiert: Urheber-/Haftungszurechnung, Nicht-Rekonstruierbarkeit bei regulatorischer Prüfung. <SourceBadge short="NIST MEASURE, S. 28" full="NIST (2023), S. 28, Abschnitt 5.3 MEASURE." /></p>
-</div>
-<div class="mono" style="font-size:0.6rem;color:var(--cream-50);">ARTEFAKT</div>
-</div>
-
-<div style="display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;padding:0.5rem 0;border-bottom:1px solid var(--gold-muted);">
-<div class="mono" style="color:var(--gold);font-size:1.4rem;">04</div>
-<div>
-<strong style="color:var(--cream);">NIST-RMF-Mapping in die Projektcharta</strong> — wer nimmt Govern / Map / Measure / Manage wahr?
-<p style="font-size:0.72rem;color:var(--cream-70);margin:0.2rem 0 0;">Adressiert: unklare Verantwortlichkeit, ad-hoc-Governance unter Zeitdruck. <SourceBadge short="NIST GOVERN 1.1 / 2.1" full="NIST (2023), S. 22, GOVERN 1.1 und 2.1." /></p>
-</div>
-<div class="mono" style="font-size:0.6rem;color:var(--cream-50);">STRUKTUR</div>
-</div>
-
-<div style="display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;padding:0.5rem 0;">
-<div class="mono" style="color:var(--gold);font-size:1.4rem;">05</div>
-<div>
-<strong style="color:var(--cream);">Branchenspezifische Zusatzpflichten</strong> im Projekt-Setup prüfen — MaRisk/BAIT, MDR/IVDR, DSGVO je nach Sektor.
-<p style="font-size:0.72rem;color:var(--cream-70);margin:0.2rem 0 0;">Adressiert: nachträgliche Compliance-Lücken, Bußgeldrisiken, Aufsichtsfragen. <SourceBadge short="Bitkom, 2017, S. 2–4" full="Bitkom (2017). IT-gestützte Compliance im Finanzsektor, S. 2–4." /> · <SourceBadge short="NIST GOVERN 6" full="NIST (2023), S. 23, GOVERN 6." /></p>
-</div>
-<div class="mono" style="font-size:0.6rem;color:var(--cream-50);">SEKTOR</div>
-</div>
-
-</div>
-
-<!--
-Sprechleitfaden · 60 s
-- Fünf Empfehlungen in 60 Sekunden — pro Empfehlung 10–12 Sekunden
-- Struktur ist mnemotechnisch: PFLICHT → PROZESS → ARTEFAKT → STRUKTUR → SEKTOR
-- Nicht vorlesen — Zuhörer können mitlesen, Vortrag pointiert auf die Risiken
--->
-
----
-
-# Haftung wird <em style="font-style:italic;color:var(--gold);">neu verteilt</em>
-
-<div style="max-width:68ch;margin-top:1.5rem;" class="stagger">
-
-<p style="font-family:var(--font-display);font-size:1.4rem;font-weight:300;line-height:1.45;color:var(--cream);">
-Die neue ProdHaftRL, der AI Act und die erste deutsche Rechtsprechung (LG Kiel) verschieben Haftung <strong>strukturell</strong> — weg von der individuellen Fahrlässigkeit, hin zu dokumentierter Governance.
+<p style="margin-top:0.9rem;font-size:0.8rem;color:var(--cream-70);font-family:var(--font-display);font-style:italic;line-height:1.4;">
+<strong>Verbindungslinie:</strong> Top-down setzt Strategie taktische Schwellen, taktische Schwellen werden operativ vollzogen. Bottom-up: ein operativer Vorfall → MEASURE → MAP → ggf. GOVERN-Revision. <strong>Art. 14 AI Act</strong> ist Querschnitt: jede Ebene übt Aufsicht in eigener Tiefe aus.
 </p>
 
-<hr class="hairline" style="margin:1.5rem 0;" />
+<p class="mono" style="font-size:0.6rem;color:var(--cream-50);">Synthese aus NIST-Funktionen + Bitkom-Architekturschichten + AI Act Art. 14. <SourceBadge short="NIST AI 100-1, S. 20–32" full="NIST (2023). AI Risk Management Framework 1.0, Abschnitt 5.1–5.4." /> · <SourceBadge short="Bitkom, 2017, S. 2–4, 7" full="Bitkom (2017). IT-gestützte Compliance im Finanzsektor — Konzept und Vorgehensweise, S. 2–4, 7." /></p>
 
-<p style="font-family:var(--font-display);font-style:italic;font-size:1.2rem;font-weight:300;line-height:1.5;color:var(--cream-70);">
-Für Projektleitungen heißt das:
+<!--
+Sprechleitfaden · 65 s
+- Drei Ebenen ist die zweite LL.M.-Eigenleistung neben Fünf-Dimensionen
+- Mittlere Ebene Goldhighlighted — taktisch ist sektoral am stärksten betroffen
+- Verbindungslinie unten: Top-down + Bottom-up + Querschnitt Art. 14
+- Synthese-Hinweis: NIST + Bitkom als Anker, keine Erfindung
+-->
+
+---
+
+# DORA × MaRisk — wenn GenKI zum <em style="font-style:italic;color:var(--gold);">IKT-Drittdienst</em> wird
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:0.6rem;" class="stagger">
+
+<div class="panel">
+<div class="kicker">DORA Art. 28 ff. (gilt seit 17.01.2025)</div>
+<ul style="font-size:0.72rem;list-style:none;padding:0;margin:0.3rem 0;">
+<li style="margin:0.25rem 0;"><strong>Art. 28 Abs. 3:</strong> Aufnahme ins <strong>Informationsregister</strong> kritischer IKT-Funktionen</li>
+<li style="margin:0.25rem 0;"><strong>Art. 28 Abs. 4 + Art. 29:</strong> Vorabbewertung Konzentrations-/Substituierbarkeitsrisiko</li>
+<li style="margin:0.25rem 0;"><strong>Art. 30 Abs. 2:</strong> Vertraglicher <strong>Mindestinhalt</strong> (Standorte, Audit, Datenrückgabe)</li>
+<li style="margin:0.25rem 0;"><strong>Art. 30 Abs. 3:</strong> Bei kritischen/wichtigen Funktionen erweiterter Vertragskatalog</li>
+<li style="margin:0.25rem 0;"><strong>Art. 28 Abs. 8:</strong> getestete <strong>Exit-Strategie</strong></li>
+</ul>
+<p style="font-size:0.7rem;color:var(--cream-70);margin-top:0.4rem;line-height:1.35;">Greift, sobald ein FinServ-Institut OpenAI/Azure-OpenAI/Anthropic-Enterprise für Projektdoku einsetzt — auch indirekt über SaaS-Tools.</p>
+</div>
+
+<div class="panel">
+<div class="kicker">MaRisk AT 9 (Auslagerung)</div>
+<ul style="font-size:0.72rem;list-style:none;padding:0;margin:0.3rem 0;">
+<li style="margin:0.25rem 0;">Prinzipienbasierter Auslagerungsbegriff — relevant ab „typischer Bezug" wesentlicher Funktion</li>
+<li style="margin:0.25rem 0;">Anforderungen vor Auslagerung: Risikoanalyse, Eignungsprüfung Anbieter</li>
+<li style="margin:0.25rem 0;">Während: Steuerung, Kontrolle, Eingriffsrechte, Berichtswesen</li>
+<li style="margin:0.25rem 0;">Abgrenzung: „sonstiger Fremdbezug" unterliegt geringeren Pflichten</li>
+</ul>
+<p style="font-size:0.7rem;color:var(--cream-70);margin-top:0.4rem;line-height:1.35;">DORA ist <strong>lex specialis</strong> — schlägt für IKT-Bezug zu, MaRisk bleibt für Geschäfts-Auslagerung.</p>
+</div>
+
+</div>
+
+<div class="panel panel-gold" style="margin-top:0.8rem;padding:0.7rem 1rem;">
+<div class="kicker">Konfliktzone</div>
+<p style="font-size:0.78rem;line-height:1.4;color:var(--cream);margin:0.2rem 0;">
+<strong>① Doppelregister:</strong> DORA-Informationsregister vs. MaRisk-AT-9-Auslagerungsregister — Konsolidierung erwartet, bis 8. MaRisk-Novelle ungelöst. <strong>② Exit bei Modell-Lock-in:</strong> Closed-Source-LLMs (GPT-4o, Claude) machen 1:1-Migration praktisch unmöglich — DORA-Exit-Pflicht trifft auf technische Realität.
+</p>
+</div>
+
+<!--
+Sprechleitfaden · 75 s
+- Prof-Anregung 1: DORA × MaRisk als LL.M.-Alleinstellungsmerkmal
+- DORA gilt seit 17.01.2025 — bereits scharfes Recht
+- Lex specialis: DORA für IKT, MaRisk für Geschäft
+- Konflikte unten — Doppelregister + Exit-Strategie sind die offenen Aufsichtspraxisfragen 2025/26
+-->
+
+---
+
+# BaFin — die <em style="font-style:italic;color:var(--gold);">nationale Konkretisierung</em>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:0.8rem;" class="stagger">
+
+<div class="panel">
+<div class="kicker">Fachartikel · 01.08.2024</div>
+<p style="font-size:0.8rem;color:var(--cream);margin:0.3rem 0;font-style:italic;font-family:var(--font-display);">„KI bei Banken und Versicherern: Automatisch fair?"</p>
+<ul style="font-size:0.74rem;list-style:none;padding:0;margin:0.4rem 0;">
+<li style="margin:0.3rem 0;"><strong>Erklärbarkeit:</strong> bei vergleichbaren Ergebnissen einfachere Modelle bevorzugen — Transparenz als Auswahlkriterium</li>
+<li style="margin:0.3rem 0;"><strong>Human Oversight:</strong> bei generativer KI ohne Filter/menschliche Kontrolle entstehen Haftungs- und Reputationsrisiken</li>
+<li style="margin:0.3rem 0;"><strong>Drittanbieter:</strong> bei externer GenKI bleiben Trainingsdaten + Funktionsweise unbekannt — Risiko</li>
+</ul>
+<p class="mono" style="font-size:0.58rem;color:var(--cream-50);">bafin.de/SharedDocs/Veroeffentlichungen/DE/Fachartikel/2024/fa-bj_0801_KI_Finanzindustrie</p>
+</div>
+
+<div class="panel panel-gold">
+<div class="kicker">Orientierungshilfe IKT-Risiken bei KI · 18.12.2025</div>
+<p style="font-size:0.8rem;color:var(--cream);margin:0.3rem 0;">BaFin Referat CTF 5 — operationalisiert <strong>DORA</strong> für KI-Einsatz in CRR-Instituten und SII-Versicherern.</p>
+<ul style="font-size:0.74rem;list-style:none;padding:0;margin:0.4rem 0;">
+<li style="margin:0.3rem 0;">KI-Sicherheit/-Resilienz <strong>in jeder Lebenszyklus-Phase</strong> (Datenakquise, Entwicklung, Betrieb, Außerdienststellung)</li>
+<li style="margin:0.3rem 0;">KI-Systeme MÜSSEN ins bestehende <strong>IKT-Risikomanagement</strong> integriert werden</li>
+<li style="margin:0.3rem 0;">Explizit: <strong>IKT-Drittparteienrisiko</strong> bei externen KI-Anbietern</li>
+</ul>
+<p class="mono" style="font-size:0.58rem;color:var(--cream-50);">bafin.de/SharedDocs/Downloads/DE/Anlage/neu/dl_Anlage_orientierungshilfe_IKT_Risiken_bei_KI</p>
+</div>
+
+</div>
+
+<p style="margin-top:0.9rem;font-size:0.82rem;color:var(--cream-70);font-family:var(--font-display);font-style:italic;line-height:1.4;">
+Beide Dokumente sind <strong>nicht-bindende Verlautbarungen</strong>, prägen aber die aufsichtliche Erwartungshaltung — und damit die faktische Compliance-Schwelle. Die Orientierungshilfe ist die <strong>nationale Konkretisierung</strong> von Art. 14 AI Act für den Finanzsektor.
 </p>
 
-<ul style="font-size:1.05rem;list-style:none;padding:0;margin-top:0.6rem;">
-<li style="margin:0.5rem 0;padding-left:1rem;border-left:2px solid var(--gold);">Wer KI einsetzt, ohne Kompetenz, Freigabe, Versionierung und Vier-Augen-Prinzip zu dokumentieren, liefert der Gegenseite die Beweisführung frei Haus.</li>
-<li style="margin:0.5rem 0;padding-left:1rem;border-left:2px solid var(--gold);">Wer KI-Governance in die Projektcharta schreibt, macht sie <strong>zur Chefsache</strong> — und schafft die einzige belastbare Verteidigung.</li>
-</ul>
+<!--
+Sprechleitfaden · 65 s
+- Prof-Anregung 3: BaFin-Hinweise als Scharnier zu Art. 14 AI Act
+- Zwei Dokumente: Fachartikel 2024 (Erklärbarkeit/Oversight) + Orientierungshilfe 12/2025 (IKT/DORA)
+- Beide nicht bindend, aber prägend für Aufsichtspraxis
+- Orientierungshilfe = nationale Konkretisierung des AI Act
+-->
 
-<p style="font-family:var(--font-display);font-style:italic;color:var(--gold);font-size:1.1rem;margin-top:1.2rem;text-align:right;">
+---
+
+# Bitkom-Referenzmodell für <em style="font-style:italic;color:var(--gold);">FinServ</em>
+
+<div style="display:grid;grid-template-columns:1fr 1.1fr;gap:1.4rem;margin-top:0.8rem;" class="stagger">
+
+<div>
+<p style="font-size:0.85rem;line-height:1.45;">
+Das <strong>Bitkom-/QIRM-Referenzmodell</strong> für IT-gestützte Compliance im Finanzsektor (seit 2015) liefert die methodische Brücke zwischen abstraktem Recht (DORA, MaRisk, BaFin) und konkreter Architektur.
+</p>
+
+<div class="panel" style="margin-top:0.8rem;padding:0.8rem 0.9rem;">
+<div class="kicker">Vier Architekturschichten</div>
+<ul style="font-size:0.78rem;list-style:none;padding:0;margin:0.3rem 0;">
+<li style="margin:0.3rem 0;">— Geschäftsarchitektur</li>
+<li style="margin:0.3rem 0;">— Daten­architektur</li>
+<li style="margin:0.3rem 0;">— Anwendungsarchitektur</li>
+<li style="margin:0.3rem 0;">— Technologie­architektur</li>
+</ul>
+<p class="mono" style="font-size:0.58rem;color:var(--cream-50);margin-top:0.3rem;"><SourceBadge short="Bitkom, 2017, S. 3, 7" full="Bitkom e.V. (2017). IT-gestützte Compliance im Finanzsektor — Konzept und Vorgehensweise, S. 3, 7." /></p>
+</div>
+</div>
+
+<div class="panel">
+<div class="kicker">Mapping auf KI-Doku-Compliance</div>
+<table style="font-size:0.72rem;width:100%;border-collapse:collapse;margin-top:0.3rem;">
+<tr style="border-bottom:1px solid var(--gold-muted);"><td style="padding:0.3rem;color:var(--gold);width:35%;"><strong>Geschäft</strong></td><td style="padding:0.3rem;color:var(--cream-70);">KI-Use-Cases pro Funktion (Onboarding, AML, Reporting)</td></tr>
+<tr style="border-bottom:1px solid var(--gold-muted);"><td style="padding:0.3rem;color:var(--gold);"><strong>Daten</strong></td><td style="padding:0.3rem;color:var(--cream-70);">KY-Customer/Transaction/Process · DSGVO-Konformität · Trainingsdaten-Provenienz</td></tr>
+<tr style="border-bottom:1px solid var(--gold-muted);"><td style="padding:0.3rem;color:var(--gold);"><strong>Anwendung</strong></td><td style="padding:0.3rem;color:var(--cream-70);">Prompt-Versionierung, Output-Logging, qeS-Workflow</td></tr>
+<tr><td style="padding:0.3rem;color:var(--gold);"><strong>Technologie</strong></td><td style="padding:0.3rem;color:var(--cream-70);">DORA-Drittanbieter-Stack (Modell, RAG, Hosting)</td></tr>
+</table>
+<hr class="hairline" style="margin:0.6rem 0;" />
+<p style="font-size:0.74rem;color:var(--cream);font-style:italic;font-family:var(--font-display);line-height:1.4;">Bitkom liefert die <strong>taktische Übersetzungsschicht</strong>: zwischen DORA-Anforderung und konkretem KI-Workflow.</p>
+</div>
+
+</div>
+
+<!--
+Sprechleitfaden · 50 s
+- Bitkom als Referenzarchitektur, nicht als KI-Compliance-Leitfaden
+- Vier Schichten zeigen, wo welche Pflicht greift
+- Mapping rechts: Geschäft → DORA-relevante Funktion; Daten → DSGVO; Anwendung → AI Act/qeS; Technologie → DORA Art. 28
+- Gibt der Praxis ein Strukturraster
+-->
+
+---
+
+# Fazit: <em style="font-style:italic;color:var(--gold);">nachweisfähig</em> oder gar nicht
+
+<div style="max-width:78ch;margin-top:1rem;" class="stagger">
+
+<p style="font-family:var(--font-display);font-size:1.3rem;font-weight:300;line-height:1.4;color:var(--cream);">
+Generative KI verbessert die Projektdokumentation nur dann <em style="color:var(--gold);">nachweis- und revisionsfähig</em>, wenn ein rechtssicherer Governance-Rahmen besteht — andernfalls überwiegen die regulatorischen Haftungsrisiken.
+</p>
+
+<hr class="hairline" style="margin:1.2rem 0;" />
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
+
+<div>
+<div class="kicker">Drei Take-Aways</div>
+<ul style="font-size:0.85rem;list-style:none;padding:0;margin:0.4rem 0;">
+<li style="margin:0.5rem 0;padding-left:1rem;border-left:2px solid var(--gold);"><strong>§ 633 + § 416 ZPO + LG Kiel</strong> bilden einen Dreiklang: Werkvertrag, Beweisfähigkeit, Haftung — ohne signierte Freigabe greifen alle drei gegen den KI-Nutzer.</li>
+<li style="margin:0.5rem 0;padding-left:1rem;border-left:2px solid var(--gold);"><strong>DORA Art. 28 ff.</strong> ist seit 17.01.2025 Pflicht — wer GenKI ohne Vertragsmindestinhalt + Exit-Strategie nutzt, agiert aufsichtsrechtlich unsicher.</li>
+<li style="margin:0.5rem 0;padding-left:1rem;border-left:2px solid var(--gold);"><strong>Drei-Ebenen-Governance</strong> verteilt die fünf Qualitätsdimensionen organisatorisch — KI-Compliance ist Chefsache, nicht Anwender­problem.</li>
+</ul>
+</div>
+
+<div class="panel">
+<div class="kicker">Ausblick PM2030</div>
+<p style="font-size:0.82rem;line-height:1.4;color:var(--cream-70);">
+Gartner prognostiziert: 80 % der heutigen PM-Routinen werden bis 2030 durch KI eliminiert oder transformiert. <SourceBadge short="Hughes et al., 2025" full="Hughes, L. et al. (2025). Impact of AI on project management. Journal of Innovation & Knowledge, 10, 100772, S. 2 (zitiert Gartner/Costello 2019)." />
+</p>
+<p style="font-size:0.82rem;line-height:1.4;color:var(--cream);margin-top:0.5rem;font-style:italic;font-family:var(--font-display);">
+Bleibt: die Verantwortung. Eliminiert wird die Routine, nicht die Haftung.
+</p>
+</div>
+
+</div>
+
+<p style="margin-top:1.2rem;font-family:var(--font-display);font-style:italic;color:var(--gold);font-size:1.05rem;text-align:right;">
 — Vielen Dank. Fragen?
 </p>
 
 </div>
 
 <!--
-Sprechleitfaden · 45 s
-- These vom Anfang auflösen
-- Zwei Sätze als Take-away: ohne Dokumentation — mit Dokumentation
-- Dank + Übergang zur Diskussion
-- Quellenfolie folgt, darf aber knapp bleiben
+Sprechleitfaden · 60 s
+- These vom Anfang auflösen — auf Folie 2 zeigen
+- Drei Take-Aways pointiert
+- PM2030: Routine wird automatisiert, Haftung bleibt menschlich
+- Übergang zur Diskussion
 -->
 
 ---
@@ -681,50 +795,50 @@ layout: default
 
 # Quellen
 
-<div style="font-size:0.72rem;line-height:1.45;column-count:2;column-gap:2rem;margin-top:1rem;font-family:var(--font-mono);color:var(--cream-70);">
+<div style="font-size:0.7rem;line-height:1.4;column-count:2;column-gap:1.8rem;margin-top:0.8rem;font-family:var(--font-mono);color:var(--cream-70);">
 
-<div style="break-inside:avoid;margin-bottom:1rem;">
-<strong style="color:var(--gold);font-family:var(--font-display);font-style:italic;font-weight:400;">Rechtsprechung &amp; Gesetze</strong><br/>
-<div style="margin:0.3rem 0;">LG Kiel, Urteil v. 29.02.2024 – 6 O 151/23, GRUR-RS 2024, 29599.</div>
-<div style="margin:0.3rem 0;">VO (EU) 2024/1689 v. 13.06.2024 (AI Act).</div>
-<div style="margin:0.3rem 0;">RL (EU) 2024/2853 v. 23.10.2024 (ProdHaftRL).</div>
-<div style="margin:0.3rem 0;">ProdHaftG vom 15.12.1989 i. d. F. v. 10.08.2021.</div>
-<div style="margin:0.3rem 0;">BGB §§ 823, 831, 630h.</div>
+<div style="break-inside:avoid;margin-bottom:0.7rem;">
+<strong style="color:var(--gold);font-family:var(--font-display);font-style:italic;font-weight:400;">Rechtsprechung &amp; Gesetze</strong>
+<div style="margin:0.25rem 0;">LG Kiel, Urteil v. 29.02.2024 – 6 O 151/23, GRUR-RS 2024, 29599.</div>
+<div style="margin:0.25rem 0;">VO (EU) 2024/1689 v. 13.06.2024 (AI Act).</div>
+<div style="margin:0.25rem 0;">VO (EU) 2022/2554 v. 14.12.2022 (DORA).</div>
+<div style="margin:0.25rem 0;">VO (EU) 2016/679 (DSGVO).</div>
+<div style="margin:0.25rem 0;">RL (EU) 2024/2853 (ProdHaftRL).</div>
+<div style="margin:0.25rem 0;">BGB §§ 631, 633, 634, 634a, 823, 630h, 126a.</div>
+<div style="margin:0.25rem 0;">ZPO §§ 286, 371, 371a, 415, 416.</div>
 </div>
 
-<div style="break-inside:avoid;margin-bottom:1rem;">
-<strong style="color:var(--gold);font-family:var(--font-display);font-style:italic;font-weight:400;">Studien &amp; Reports</strong><br/>
-<div style="margin:0.3rem 0;">Wissenschaftliche Dienste des Bundestags (2025). Sachstand WD 7 - 3000 - 004/25.</div>
-<div style="margin:0.3rem 0;">NIST (2023). AI Risk Management Framework 1.0 (AI 100-1).</div>
-<div style="margin:0.3rem 0;">PwC Deutschland (2025). AI Jobs Barometer.</div>
-<div style="margin:0.3rem 0;">Project Management Institute (2024). First Movers' Advantage (GenAI Adoption Report).</div>
-<div style="margin:0.3rem 0;">Project Management Institute (2024). Pushing the Limits.</div>
-<div style="margin:0.3rem 0;">Bitkom (2017). IT-gestützte Compliance im Finanzsektor.</div>
+<div style="break-inside:avoid;margin-bottom:0.7rem;">
+<strong style="color:var(--gold);font-family:var(--font-display);font-style:italic;font-weight:400;">Aufsicht &amp; Standards</strong>
+<div style="margin:0.25rem 0;">BaFin (2024). KI bei Banken und Versicherern: Automatisch fair? Fachartikel v. 01.08.2024.</div>
+<div style="margin:0.25rem 0;">BaFin (2025). Orientierungshilfe zu IKT-Risiken beim Einsatz von KI. Stand 18.12.2025, Referat CTF 5.</div>
+<div style="margin:0.25rem 0;">MaRisk (Mindestanforderungen an das Risikomanagement), aktuelle Fassung.</div>
+<div style="margin:0.25rem 0;">NIST (2023). AI RMF 1.0 (NIST AI 100-1).</div>
+<div style="margin:0.25rem 0;">Wissenschaftliche Dienste des Bundestages (2025). Sachstand WD 7-3000-004/25.</div>
+<div style="margin:0.25rem 0;">Bitkom e.V. (2017). IT-gestützte Compliance im Finanzsektor.</div>
 </div>
 
 <div style="break-inside:avoid;">
-<strong style="color:var(--gold);font-family:var(--font-display);font-style:italic;font-weight:400;">Wissenschaft &amp; Lehrmaterial</strong><br/>
-<div style="margin:0.3rem 0;">Magesh, V. et al. (2025). Hallucination-Free? J. Empirical Legal Studies.</div>
-<div style="margin:0.3rem 0;">Dell'Acqua, F. et al. (2026). Navigating the Jagged Technological Frontier. Organization Science.</div>
-<div style="margin:0.3rem 0;">Almeida, P. M. et al. (2025). AI tools for PM. Project Leadership and Society.</div>
-<div style="margin:0.3rem 0;">Aramali, V. et al. (2025). Generative AI in PM. Project Leadership and Society.</div>
-<div style="margin:0.3rem 0;">Felicetti, A. M. et al. (2024). AI and project management. J. Innovation &amp; Knowledge.</div>
-<div style="margin:0.3rem 0;">Hettrich, B., Krings, N. &amp; Kock, A. (2025). Bridging the Expertise Gap. Creativity and Innovation Management.</div>
-<div style="margin:0.3rem 0;">Hughes, L. et al. (2025). Impact of AI on PM. J. Innovation &amp; Knowledge.</div>
-<div style="margin:0.3rem 0;">Anh-Hoang, D., Tran, V. &amp; Nguyen, L.-M. (2025). Survey of hallucinations in LLMs. Frontiers in AI.</div>
-<div style="margin:0.3rem 0;">Li, Y., Sheng, D., Zhou, Z. &amp; Wu, Y. (2024). AI hallucination classification. HSSC.</div>
-<div style="margin:0.3rem 0;">Shao, A. (2025). Beyond Misinformation. arXiv:2504.13777.</div>
-<div style="margin:0.3rem 0;">Rodriguez de Las Heras Ballell (2025). Mapping generative AI rules. Cambridge Forum on AI.</div>
-<div style="margin:0.3rem 0;">Bernert/Scheurer/Wehnes (Hrsg.) (2024). KI in der Projektwirtschaft 2. UVK.</div>
-<div style="margin:0.3rem 0;">Jakoby, W. (2025). Projektmanagement für Ingenieure, 6. Aufl. Springer Vieweg.</div>
+<strong style="color:var(--gold);font-family:var(--font-display);font-style:italic;font-weight:400;">Wissenschaft</strong>
+<div style="margin:0.25rem 0;">Magesh, V. et al. (2025). Hallucination-Free? J. Empirical Legal Studies.</div>
+<div style="margin:0.25rem 0;">Dell'Acqua, F. et al. (2026). Navigating the Jagged Technological Frontier. Organization Science.</div>
+<div style="margin:0.25rem 0;">Anh-Hoang, D. et al. (2025). Survey of hallucinations in LLMs. Frontiers in AI.</div>
+<div style="margin:0.25rem 0;">Aramali, V. et al. (2025). GenAI in PM. Project Leadership and Society.</div>
+<div style="margin:0.25rem 0;">Hughes, L. et al. (2025). AI on PM. J. Innovation &amp; Knowledge.</div>
+<div style="margin:0.25rem 0;">Almeida, P. M. et al. (2025). AI tools for PM. Project Leadership and Society.</div>
+<div style="margin:0.25rem 0;">Felicetti, A. M. et al. (2024). AI and PM. J. Innovation &amp; Knowledge.</div>
+<div style="margin:0.25rem 0;">Hettrich, B. et al. (2025). Bridging the Expertise Gap. Creativity and Innovation Management.</div>
+<div style="margin:0.25rem 0;">Rodriguez de Las Heras Ballell (2025). Mapping generative AI rules. Cambridge Forum on AI.</div>
+<div style="margin:0.25rem 0;">Bernert, C. et al. (Hrsg.) (2024). KI in der Projektwirtschaft 2. UVK.</div>
+<div style="margin:0.25rem 0;">PwC Deutschland (2025). AI Jobs Barometer 2025.</div>
 </div>
 
 </div>
 
-<p class="mono" style="font-size:0.6rem;color:var(--cream-50);margin-top:1rem;">Vollständige APA-7-Bibliografie mit DOIs im Repo: <code>docs/BIBLIOGRAPHY.md</code></p>
+<p class="mono" style="font-size:0.6rem;color:var(--cream-50);margin-top:0.6rem;">Vollständige APA-7-Bibliografie: <code>docs/BIBLIOGRAPHY.md</code> · Legal-Analyse: <code>docs/LEGAL_QUALITY_ANALYSIS.md</code> · FinServ-Regulatorik: <code>docs/FINSERV_REGULATORIK.md</code></p>
 
 <!--
 Sprechleitfaden · 10 s
-- Nicht vorlesen — nur sagen: "Vollständige Bibliografie im Repo"
-- Bei Rückfragen ist diese Folie Nachweis
+- Nicht vorlesen
+- "Vollständige Bibliografie im Repo"
 -->
