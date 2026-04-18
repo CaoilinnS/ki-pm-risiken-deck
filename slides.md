@@ -142,35 +142,35 @@ Sprechleitfaden · 60 s
 
 # Halluzinationen — eine <em style="font-style:italic;color:var(--gold);">Taxonomie</em>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.2rem;" class="stagger">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;margin-top:0.6rem;" class="stagger">
 
-<div class="panel">
+<div class="panel" style="padding:0.8rem 1rem;">
 <div class="kicker">① Intrinsisch (faithfulness)</div>
-<p style="font-size:0.85rem;">Output <strong>widerspricht dem Input</strong>. Typisch bei Summarization.</p>
-<p class="mono" style="font-size:0.7rem;color:var(--cream-50);">Input: „Einstein wurde in Ulm geboren." → Output: „in Berlin geboren." <SourceBadge short="Anh-Hoang et al., 2025" full="Anh-Hoang, D., Tran, V. & Nguyen, L.-M. (2025). Survey and analysis of hallucinations in large language models. Frontiers in AI, 8:1622292, S. 3." /></p>
+<p style="font-size:0.78rem;margin:0.3rem 0;">Output <strong>widerspricht dem Input</strong>. Typisch bei Summarization.</p>
+<p class="mono" style="font-size:0.65rem;color:var(--cream-50);margin:0.2rem 0 0;">Input: „Einstein wurde in Ulm geboren." → Output: „in Berlin geboren." <SourceBadge short="Anh-Hoang et al., 2025" full="Anh-Hoang, D., Tran, V. & Nguyen, L.-M. (2025). Survey and analysis of hallucinations in large language models. Frontiers in AI, 8:1622292, S. 3." /></p>
 </div>
 
-<div class="panel">
+<div class="panel" style="padding:0.8rem 1rem;">
 <div class="kicker">② Extrinsisch (unverankerte Ergänzung)</div>
-<p style="font-size:0.85rem;">Output fügt <strong>Information hinzu</strong>, die nicht im Kontext steht — nicht unmittelbar falsch, aber ungegroundet.</p>
-<p class="mono" style="font-size:0.7rem;color:var(--cream-50);">Erfundener Kausalmechanismus in offener QA. <SourceBadge short="Anh-Hoang et al., 2025" full="Anh-Hoang et al. (2025), S. 3, Zeilen 148-151." /></p>
+<p style="font-size:0.78rem;margin:0.3rem 0;">Output fügt <strong>Information hinzu</strong>, die nicht im Kontext steht — nicht unmittelbar falsch, aber ohne Quellverankerung.</p>
+<p class="mono" style="font-size:0.65rem;color:var(--cream-50);margin:0.2rem 0 0;">Erfundener Kausalmechanismus in offener QA. <SourceBadge short="Anh-Hoang et al., 2025" full="Anh-Hoang et al. (2025), S. 3, Zeilen 148-151." /></p>
 </div>
 
-<div class="panel">
+<div class="panel" style="padding:0.8rem 1rem;">
 <div class="kicker">③ Faktisch (factualness)</div>
-<p style="font-size:0.85rem;">Output widerspricht <strong>real-weltlichem Wissen</strong>, unabhängig vom Kontext.</p>
-<p class="mono" style="font-size:0.7rem;color:var(--cream-50);">„Hauptstadt Kanadas: Toronto." <SourceBadge short="Li et al., 2024" full="Li, Y., Sheng, D., Zhou, Z. & Wu, Y. (2024). AI hallucination: towards a comprehensive classification of distorted information in AIGC. Humanities and Social Sciences Communications, 11:1278, S. 2." /></p>
+<p style="font-size:0.78rem;margin:0.3rem 0;">Output widerspricht <strong>real-weltlichem Wissen</strong>, unabhängig vom Kontext.</p>
+<p class="mono" style="font-size:0.65rem;color:var(--cream-50);margin:0.2rem 0 0;">„Hauptstadt Kanadas: Toronto." <SourceBadge short="Li et al., 2024" full="Li, Y., Sheng, D., Zhou, Z. & Wu, Y. (2024). AI hallucination: towards a comprehensive classification of distorted information in AIGC. Humanities and Social Sciences Communications, 11:1278, S. 2." /></p>
 </div>
 
-<div class="panel">
+<div class="panel" style="padding:0.8rem 1rem;">
 <div class="kicker">④ Logisch / misgrounded</div>
-<p style="font-size:0.85rem;">Syntax korrekt, <strong>Schlussfolgerung widersprüchlich</strong> — oder Zitation existiert, stützt die Aussage aber nicht.</p>
-<p class="mono" style="font-size:0.7rem;color:var(--cream-50);">Die gefährlichste Klasse in juristischen Kontexten. <SourceBadge short="Magesh et al., 2025" full="Magesh et al. (2025). Abschnitt 4.3, S. 5–6." /></p>
+<p style="font-size:0.78rem;margin:0.3rem 0;">Syntax korrekt, <strong>Schlussfolgerung widersprüchlich</strong> — oder Zitation existiert, stützt die Aussage aber nicht.</p>
+<p class="mono" style="font-size:0.65rem;color:var(--cream-50);margin:0.2rem 0 0;">Die gefährlichste Klasse in juristischen Kontexten. <SourceBadge short="Magesh et al., 2025" full="Magesh et al. (2025). Abschnitt 4.3, S. 5–6." /></p>
 </div>
 
 </div>
 
-<p style="margin-top:1.2rem;font-size:0.85rem;color:var(--cream-70);font-family:var(--font-display);font-style:italic;">
+<p style="margin-top:0.6rem;font-size:0.78rem;color:var(--cream-70);font-family:var(--font-display);font-style:italic;line-height:1.35;">
 Shao (2025) verdichtet die Typen auf zwei Kernfehler: <strong>faithfulness errors</strong> (Widerspruch zu Input) und <strong>factualness errors</strong> (Widerspruch zu Weltwissen). <SourceBadge short="Shao, 2025" full="Shao, A. (2025). Beyond Misinformation: A Conceptual Framework for Studying AI Hallucinations in (Science) Communication. arXiv:2504.13777v1, S. 5–6." />
 </p>
 
