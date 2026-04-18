@@ -1,10 +1,6 @@
 ---
 theme: default
 title: "KI im Projektmanagement: Regulatorische und Haftungsrisiken"
-info: |
-  LL.M. Legal Tech · Modul Projektmanagement
-  Claudia Bothe · Tobias Huck
-class: text-center
 highlighter: shiki
 drawings:
   persist: false
@@ -18,10 +14,6 @@ css: unocss
 defaults:
   layout: default
 ---
-
-<style>
-@import '/styles/index.css';
-</style>
 
 <div class="slidev-layout title-layout" style="display:flex;align-items:center;justify-content:flex-start;padding:6rem 6rem 4rem;position:relative;">
   <div style="max-width:80ch;">
