@@ -1,103 +1,112 @@
-# Speaker Notes (Gespiegelt aus slides.md)
+# Speaker Notes (Rework v2.0 · Projektdokumentation)
 
-Die Notizen sind in `slides.md` in `<!-- -->`-Blöcken hinterlegt und erscheinen im Slidev-Presenter-Mode (Taste `p` während `npm run dev`). Hier die Zusammenfassung pro Folie:
+Gespiegelt aus `slides.md`-Kommentaren. Im Slidev-Presenter-Mode verfügbar (Taste `p` während `npm run dev`).
 
-## 01 · Titel (0:30)
+## Block I — Kontext & Nutzungsstand
+
+### 01 · Titel (0:30)
 - Begrüßung, Thema, Gruppenvorstellung
-- Leitfrage: Wer haftet, wenn KI im Projekt irrt?
-- Drei-Block-Struktur ankündigen (Evidenz – Recht – Praxis)
-- Anspruch: jede Aussage belegt, keine Erfindung
+- Leitfrage: Wann darf KI-erstellte Projektdokumentation als rechtssicher gelten?
+- 5 Blöcke · 18–20 Min · Fokus reguliert (FinServ)
 
-## 02 · Agenda (0:30)
-- Schwerpunkt Block II ankündigen (daher längste Dauer)
-- Interaktive Haftungsmatrix (Folie 13) als Höhepunkt hervorheben
-- These stehen lassen — nicht auflösen, das machen die Folien
+### 02 · Agenda + These (0:30)
+- Fünf-Block-Struktur, Schwerpunkt III (Haftung) und IV (Governance)
+- These bewusst geschärft auf „nachweis- und revisionsfähig"
+- Folie 14 (Haftungsmatrix) als interaktives Highlight ankündigen
 
-## 03 · Einstieg (1:00)
-- Links: Produktivitätsgewinne knapp nennen
-- Rechts: 74 % Kernzahl — auch Enthusiasten haben Bedenken
-- Übergang: „Woher kommen diese Bedenken konkret?"
+### 03 · GenKI in PM-Doku (1:00)
+- Fünf typische Doku-Artefakte (alle vom Werkvertrag erfasst)
+- Penetrationszahlen als Kontext
+- 74%-Diskrepanz öffnet Spannungsfeld
 
-## 04 · Drei Zahlen (1:00)
-- **Wichtig:** 17–33 % sind die Stanford-RegLab-Zahlen (Magesh 2025), NICHT die 58 % (die stammen aus Dahl 2024 für LLMs ohne RAG)
-- § 823 BGB als juristischer Anker — Mensch bleibt verantwortlich
-- 9.12.2026: alles was danach in Verkehr, fällt unter neue ProdHaftRL
+### 04 · Jagged Frontier (1:10)
+- Dell'Acqua als Empirie-Anker
+- Drei Zahlen merken: +12,2 % / –25,1 % / –19 %
+- „Falling asleep at the wheel" als Bild
 
-## 05 · Taxonomie (1:00)
-- Vier Kategorien müssen nicht auswendig beherrscht werden
-- Kernbotschaft: NICHT jede Halluzination ist erfunden — besonders gefährlich ist „misgrounded"
-- Shao-Kondensat als Brücke zu Folie 6
+## Block II — Qualitätsanforderungen
 
-## 06 · PM-Artefakte (1:10)
-- Transparent: Fachliteratur hat PM-Artefakte nicht durchdekliniert — wir leiten ab
-- Pointe: Moffatt v. Air Canada ist ein reales Urteil, keine Theorie
-- Übergang zu Rechtsrahmen
+### 05 · Abschnittstrenner (0:20)
+Kurz, keine Inhalte.
 
-## 07 · Abschnitt II (0:20)
-- Kurz, keine Inhalte
+### 06 · Fünf Qualitätsdimensionen (1:10)
+- Eigenleistung des Decks, verdichtet aus NIST-7
+- Auditierbarkeit gold-highlighted — zentral für FinServ
+- AI-Act-Kongruenz unten zeigt: nicht erfunden, EU-rechtlich spiegelbar
 
-## 08 · Timeline (1:15)
-- 7 Events visualisieren
-- Roter „Heute"-Marker bei 18.04.2026 — Verbote/GPAI live, Anhang III in 3,5 Mon
-- ProdHaftRL: Deutschland Stand April 2026 noch nicht umgesetzt
+### 07 · Faktentreue + Halluzinations-Klassen (1:10)
+- Korrektur populärer Kurzzitat: 17–33 % für Magesh, nicht 58 %
+- Misgrounded ist die gefährlichste Klasse für Doku
+- Brücke zu Auditierbarkeit
 
-## 09 · AI Act Art. 4/14/III (1:10)
-- Art. 4 gilt schon (seit 2.2.2025)
-- Art. 14 definiert Rolle der Projektleitung
-- Art. 25 = „Flip-Moment" — Beratung wird zum Anbieter
+### 08 · Auditierbarkeit + Revisionssicherheit (1:00)
+- Beide Verletzungsbeispiele real beobachtbar
+- Brücke zu § 416 ZPO + DORA Art. 30 ankündigen
 
-## 10 · ProdHaftRL (1:00)
-- Paradigmenwechsel: Software ist Produkt
-- Dreifache Beweisvermutung (Art. 10 Abs. 3, 4) = eigentliche Systemveränderung
-- Refurbisher-Status: Finetuning kann Anbieter-Rolle auslösen
+## Block III — Haftungsfragen
 
-## 11 · § 823 + LG Kiel (1:10)
+### 09 · Abschnittstrenner (0:20)
+- Block III ist mengenmäßig größter Teil
+
+### 10 · § 633 BGB (1:15)
+- Wichtige Lücke der bisherigen KI-Recht-Diskussion — meist wird nur § 823 diskutiert
+- Tabelle Mängel zeigt: alle 5 Qualitätsdimensionen sind werkvertragsrechtlich relevant
+- Konsens-Satz Gold-Panel als Take-away
+
+### 11 · § 823 BGB + LG Kiel (1:10)
 - Erstes deutsches KI-Haftungsurteil
-- „Zu eigen machen" = zentraler Begriff
-- Vier Konstellationen decken 90 % ab
+- „Zu eigen machen" als zentraler Begriff
+- Vier PM-Konstellationen decken Praxisalltag ab
 
-## 12 · Rollen-Teaser (0:45)
-- Vier Rollen benennen, nicht deklinieren
-- Kette 01 → 04 visuell
-- Projektleitung = Zielgruppe des Decks
+### 12 · § 416 ZPO (1:10)
+- LL.M.-Hebel — explizit vom Prof angefragt
+- Kernaussage: ohne Signatur keine Urkunde
+- Drei Varianten (klassisch/elektronisch/nicht ausreichend) klar machen
+- Brücke: kongruent mit LG Kiel, dogmatisch getrennt
 
-## 13 · Haftungsmatrix (2:30) — **Herzstück**
-- Einstieg: „Wählen Sie eine Rolle"
-- Reihenfolge: Projektleitung zuerst (Zielgruppe), dann Hersteller (Kontrast)
+### 13 · AI Act + DSGVO (1:00)
+- Zwei Tabellen knapp vorstellen, nicht jede Norm einzeln durchgehen
+- Art. 22 DSGVO als Scharnier — am häufigsten unterschätzt
+- Dreifach-Sandwich (HR + FinServ) ist härtester Use Case
+
+### 14 · Haftungsmatrix (2:10) — HERZSTÜCK
+- „Wählen Sie eine Rolle"
+- Reihenfolge: Projektleitung (04) → Hersteller (01) für Kontrast
 - Pro Rolle Pointe:
-  - Hersteller: Beweislastumkehr strukturell
+  - Hersteller: Beweislastumkehr strukturell (Art. 10 ProdHaftRL)
   - Betreiber: LG Kiel schlägt direkt ein
   - Anwender: persönliche deliktische Haftung trotz Art. 4
   - Projektleitung: Dokumentationsmängel = § 630h-Parallele
-- Nicht beschleunigen
 
-## 14 · Regulierte Industrien (1:05)
-- Transparenz: MaRisk/BAIT/DORA als sektorales Allgemeinwissen markiert
-- § 630h = stärkster Einzelpunkt
-- Öffentliche Hand: Staat ist längst KI-Anwender (179 Systeme)
+## Block IV — Governance-Rahmen
 
-## 15 · Abschnitt III (0:15)
-- Ab hier Handlungsebene
+### 15 · Abschnittstrenner (0:15)
+- Ab hier konkrete Governance
 
-## 16 · NIST RMF × PM (1:00)
-- NIST freiwillig, aber De-facto-Standard
-- Govern ist cross-cutting
-- Rechte Tabelle ist UNSERE Synthese — sauber trennen
+### 16 · Drei-Ebenen-Modell (1:05)
+- Zweite LL.M.-Eigenleistung neben Fünf-Dimensionen
+- Mittlere Ebene (taktisch) sektoral am stärksten betroffen
+- Verbindungslinie: Top-down + Bottom-up + Art.-14-Querschnitt
 
-## 17 · Vier Praktiken (1:10)
-- HITL-Zahl +12,2 % / –25,1 % / –19 % = stärkste Zahl im Deck
-- Versionierung und Vier-Augen teilweise Synthese — ehrlich benennen
-- Praktiken nicht teuer oder neu — nur die Anwendung auf KI
+### 17 · DORA × MaRisk (1:15)
+- Prof-Anregung 1: LL.M.-Alleinstellungsmerkmal
+- DORA seit 17.01.2025 Pflicht
+- Lex specialis: DORA für IKT, MaRisk für Geschäft
+- Konflikte: Doppelregister + Exit-Strategie
 
-## 18 · Fünf Empfehlungen (1:00)
-- Pro Empfehlung 10–12 Sekunden
-- Mnemotechnik: PFLICHT → PROZESS → ARTEFAKT → STRUKTUR → SEKTOR
-- Nicht vorlesen
+### 18 · BaFin (1:05)
+- Prof-Anregung 3: BaFin als Scharnier zu Art. 14 AI Act
+- Zwei Dokumente: Fachartikel 01.08.2024 + Orientierungshilfe 18.12.2025
+- Orientierungshilfe = nationale Konkretisierung des AI Act
 
-## 19 · Fazit (0:45)
+### 19 · Bitkom (0:50)
+- Bitkom als Referenzarchitektur, nicht als KI-Compliance-Leitfaden
+- Vier Schichten als Strukturraster für FinServ-Projekte
+
+## Block V — Fazit
+
+### 20 · Fazit + Quellen (1:00)
 - These vom Anfang auflösen
-- Zwei Sätze: ohne/mit Dokumentation
-- Dank + Übergang Diskussion
-
-## 20 · Quellen (0:10)
-- Nicht vorlesen — nur „Vollständige Bibliografie im Repo"
+- Drei Take-Aways pointiert
+- PM2030: Routine wird automatisiert, Haftung bleibt menschlich
+- Quellenfolie nicht vorlesen

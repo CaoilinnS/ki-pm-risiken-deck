@@ -2,9 +2,13 @@
 
 ## 1. Rechtsprechung & Gesetze
 
-Bürgerliches Gesetzbuch (BGB) §§ 823, 831, 630h.
+Bürgerliches Gesetzbuch (BGB) §§ 631, 633, 634, 634a, 635, 636, 637, 638, 280, 281, 283, 284, 307, 309, 311a, 323, 326, 823, 831, 630h, 126a.
 
-LG Kiel, Urteil vom 29.02.2024 – 6 O 151/23.
+Zivilprozessordnung (ZPO) §§ 286, 371, 371a, 415, 416.
+
+Bundesdatenschutzgesetz (BDSG) § 26.
+
+LG Kiel, Urteil vom 29.02.2024 – 6 O 151/23, GRUR-RS 2024, 29599.
 
 Produkthaftungsgesetz (ProdHaftG) vom 15. Dezember 1989 (BGBl. I S. 2198), zuletzt geändert durch Art. 5 G v. 10.8.2021 (BGBl. I S. 3436).
 
@@ -12,7 +16,17 @@ RL (EU) 2024/2853 des Europäischen Parlaments und des Rates vom 23. Oktober 202
 
 VO (EU) 2024/1689 des Europäischen Parlaments und des Rates vom 13. Juni 2024 zur Festlegung harmonisierter Vorschriften für künstliche Intelligenz (AI Act). ABl. L, 2024/1689, 12.7.2024.
 
+VO (EU) 2022/2554 des Europäischen Parlaments und des Rates vom 14. Dezember 2022 über die digitale operationale Resilienz im Finanzsektor (DORA). ABl. L 333, 27.12.2022, S. 1.
+
+VO (EU) 2016/679 des Europäischen Parlaments und des Rates vom 27. April 2016 zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten (Datenschutz-Grundverordnung, DSGVO). ABl. L 119, 4.5.2016, S. 1.
+
+MaRisk — Mindestanforderungen an das Risikomanagement, aktuelle Fassung (BaFin-Rundschreiben).
+
 ## 2. Studien & Reports
+
+Bundesanstalt für Finanzdienstleistungsaufsicht. (2024, 1. August). *KI bei Banken und Versicherern: Automatisch fair?* [BaFin-Fachartikel]. BaFin. https://www.bafin.de/SharedDocs/Veroeffentlichungen/DE/Fachartikel/2024/fa-bj_0801_KI_Finanzindustrie.html
+
+Bundesanstalt für Finanzdienstleistungsaufsicht. (2025, 18. Dezember). *Orientierungshilfe zu IKT-Risiken beim Einsatz von KI in Finanzunternehmen* (Referat CTF 5). BaFin. https://www.bafin.de/SharedDocs/Downloads/DE/Anlage/neu/dl_Anlage_orientierungshilfe_IKT_Risiken_bei_KI.html
 
 Bitkom e. V. (2017). *Bitkom Projekt „IT-gestützte Compliance im Finanzsektor": Konzept und Vorgehensweise*. Bitkom e. V. https://www.bitkom.org/Themen/Digitale-Transformation-Branchen/Banking-Finance/Forschungsprojekt-IT-gestuetzte-Compliance-im-Finanzsektor-2.html
 

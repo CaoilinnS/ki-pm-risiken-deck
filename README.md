@@ -1,4 +1,6 @@
-# KI im Projektmanagement — Regulatorische und Haftungsrisiken
+# Generative KI in der Projektdokumentation
+
+**Qualitätsanforderungen · Haftungsfragen · Governance-Rahmen**
 
 Slidev-Deck für LL.M. Legal Tech, Modul Projektmanagement · Claudia Bothe & Tobias Huck · April 2026.
 
