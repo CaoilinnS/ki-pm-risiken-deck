@@ -22,7 +22,6 @@ defaults:
     <hr class="hairline" />
     <div style="font-family:var(--font-body);font-size:1rem;color:var(--cream-70);letter-spacing:0.02em;">Claudia Bothe · Tobias Huck</div>
   </div>
-  <div class="mono" style="position:absolute;bottom:2rem;left:6rem;font-size:0.75rem;color:var(--cream-50);letter-spacing:0.2em;">01 / 20</div>
 </div>
 
 <!--
